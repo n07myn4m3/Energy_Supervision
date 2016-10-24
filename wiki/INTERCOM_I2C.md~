@@ -1,0 +1,367 @@
+**Tabla de contenido**
+ 
+[TOC]
+
+**Nota**
+
+Apreciado lector, este texto no se encuentra revisado ni preparado para su publicación así que de antemano se pide perdón por los errores que se puedan contener en el mismo
+
+#Funcionamiento de un bus I2C
+
+* La informacion es enviada en cada flanco de bajada, todas las transmisiones inician con el bit mas significativo.
+* Primero se debe enviar la dirección del modulo, esta tiene un formato de 7 bits de dirección mas un bit que indica la operación de lectura o escritura.
+
+##Escritura
+
+El procedimiento para escribir en un dispositivo esclavo es el siguiente:  
+ 
+1. Enviar la secuencia de start.  
+2. Enviar la dirección I2C del esclavo con el bit R/W bajo.  
+3. Ingresar el registro interno de la dirección a la cual usted desea escribir.  
+4. Enviar el byte de información.   
+5. Opcionalmente puede enviar mas bytes de informacion.  
+6. Enviar la secuencia de stop.    
+
+Diagrama de tiempos para escribir en una dirección vía protocolo I2C.  
+
+![WRITE](https://bitbucket.org/supervisinenergtica/energy_supervision/wiki/Imagenes/INTERCOM_I2C/WRITE.png)
+
+##Lectura
+
+El procedimiento para escribir en un dispositivo esclavo es el siguiente:  
+ 
+1. Enviar la secuencia de start.  
+2. Enviar la dirección I2C del esclavo con el bit R/W bajo.  
+3. Ingresar el registro interno de la dirección a la cual usted desea leer.  
+4. Enviar de nuevo la secuencia de start. 
+5. Enviar la dirección I2C del esclavo con el bit R/W alto.  
+6. Leer el byte de información del esclavo.   
+7. Opcionalmente puede leer mas bytes de información del esclavo.   
+8. Enviar la secuencia de stop.   
+
+Diagrama de tiempos para leer de una dirección vía protocolo I2C.  
+
+![READ](https://bitbucket.org/supervisinenergtica/energy_supervision/wiki/Imagenes/INTERCOM_I2C/READ.png)
+
+#Proceso de diseño de un bus master I2C
+
+El presente texto esta basado en las lecciones del profesor Tom Briggs. 
+ 
+Este es el primer paso para comenzar a indagar sobre la comunicación I2C.
+
+
+```
+#!verilog
+
+//Controlador i2c
+module step1(
+    input wire clk,
+    input wire reset,
+    output reg i2c_sda,
+    output reg i2c_scl
+);
+//El objetivo es escribir en la direccion 0x50,0xAA
+    reg [7:0] state;
+    always @(posedge clk)
+	begin
+		if(reset==1)
+                   begin
+			state   <= 0;
+                        i2c_sda <= 1;
+                        i2c_scl <= 1;
+                   end
+        	else 
+                   begin
+			case(state)
+
+			   0: begin // idle
+				i2c_sda <= 1;
+				state   <= 1;
+                              end
+
+		           1: begin // start
+				i2c_sda <= 1;
+				state   <= 2;
+                              end
+     
+		           2: begin // msb address bit
+				i2c_sda <= 0;
+				state   <= 3;
+                              end
+
+		           3: begin // bit 5
+				i2c_sda <= 1;
+				state   <= 4;
+                              end
+
+		           4: begin // bit 4
+				i2c_sda <= 1;
+				state   <= 5;
+                              end
+
+                            //...
+                                					   
+
+                   end
+	end
+
+endmodule
+
+```
+Como se podrá notar el diseño es algo ineficiente debido a que en cada estado se debe poner el valor individual del registro con el cual se desea comunicar, una mejor aproximación sería disponer del registro por defecto e ir asignando a la salida el bit que se encuentre almacenado en cada posición del mismo.
+
+
+```
+#!verilog
+
+//Controlador i2c
+module step1(
+    input wire clk,
+    input wire reset,
+    output reg i2c_sda,
+    output reg i2c_scl
+);
+//El objetivo es escribir en la direccion 0x50,0xAA
+
+    localparam STATE_IDLE  = 0;
+    localparam STATE_START = 1;
+    localparam STATE_ADDR  = 2;
+    localparam STATE_RW    = 3;
+    localparam STATE_WACK  = 4;
+    localparam STATE_DATA  = 5;
+    localparam STATE_STOP  = 6;
+
+    reg [7:0] state;
+    reg [7:0] addr;  //Aqui se almacenara la direccion
+    reg [7:0] count; //Este sera el registro que me indicara que bit de la direccion voy a comunicar
+    always @(posedge clk)
+	begin
+		if(reset==1)
+                   begin
+			state   <= 0;
+                        i2c_sda <= 1;
+                        i2c_scl <= 1;
+                        addr    <= 7'h50;
+                        count   <= 8'd0;
+                   end
+        	else 
+                   begin
+			case(state)
+
+			   STATE_IDLE: begin // idle
+				i2c_sda <= 1;
+				state   <= STATE_START;
+                              end
+
+		           STATE_START: begin // start
+				i2c_sda <= 1;
+				state   <= STATE_ADDR;
+                                count   <= 6;   
+                              end
+     
+		           STATE_ADDR: begin 
+				i2c_sda <= addr[count];
+				if (count == 0) state <= STATE_RW;
+                                else count <= count - 1;
+                              end
+
+		           STATE_RW: begin // bit 5
+				i2c_sda <= 1;
+                                state <= STATE_WACK;
+                              end
+                           STATE_WACK: begin
+
+                                //Llegamos al punto donde el diseño simple no funcionara mas
+                                					   
+
+                   end
+	end
+
+endmodule
+
+```
+
+Por el momento no funcionará debido a que no puedo recibir información por el puerto i2c_sda sin embargo se continuará con el diseño de la maquina de estados.
+
+```
+#!verilog
+
+//Controlador i2c
+module step1(
+    input wire clk,
+    input wire reset,
+    output reg i2c_sda,
+    output reg i2c_scl
+);
+//El objetivo es escribir en la direccion 0x50,0xAA
+
+    localparam STATE_IDLE  = 0;
+    localparam STATE_START = 1;
+    localparam STATE_ADDR  = 2;
+    localparam STATE_RW    = 3;
+    localparam STATE_WACK  = 4;
+    localparam STATE_DATA  = 5;
+    localparam STATE_STOP  = 6;
+
+    reg [7:0] state;
+    reg [7:0] addr;  //Aqui se almacenara la direccion
+    reg [7:0] count; //Este sera el registro que me indicara que bit de la direccion voy a comunicar
+    always @(posedge clk)
+	begin
+		if(reset==1)
+                   begin
+			state   <= 0;
+                        i2c_sda <= 1;
+                        i2c_scl <= 1;
+                        addr    <= 7'h50;
+                        count   <= 8'd0;
+                   end
+        	else 
+                   begin
+			case(state)
+
+			   STATE_IDLE: begin // idle
+				i2c_sda <= 1;
+				state   <= STATE_START;
+                              end
+
+		           STATE_START: begin // start
+				i2c_sda <= 1;
+				state   <= STATE_ADDR;
+                                count   <= 6;   
+                              end
+     
+		           STATE_ADDR: begin 
+				i2c_sda <= addr[count];
+				if (count == 0) state <= STATE_RW;
+                                else count <= count - 1;
+                              end
+
+		           STATE_RW: begin // bit 5
+				i2c_sda <= 1;
+                                state <= STATE_WACK;
+                              end
+                           STATE_WACK: begin
+                                					   
+
+                   end
+	end
+
+endmodule
+
+```
+
+
+#Descripción del funcionamiento de los submodulos
+
+#Shitf_register (temporalmente SERIAL_COMMANDER)
+
+* Recibir un bus de 16 bits y convertirlo en una salida serial que sera transmitida cada negativo de reloj a una frecuencia de 250 kHz
+
+#Test_inout (temporalmente IN_OUT_SELECTOR)
+
+* Funcionar como el puerto inout del modulo de intercomunicacion I2C, actuando como puente entre la lectura y escritura de datos
+
+#Tempo
+
+* Su funcion es llevar el compás de la comunicacion con la finalidad de permitir los cambios entre lectora, escritura y chequeo de AK
+
+##Diagrama de flujo 
+
+![Diagrama de flujo](https://bitbucket.org/supervisinenergtica/energy_supervision/wiki/Diagrams/Submodules/INTERCOM_I2C/I2C_FLOW_CHART.png)
+
+##Diagrama de caja negra
+
+![Diagrama de caja negra](https://bitbucket.org/supervisinenergtica/energy_supervision/wiki/Diagrams/Submodules/INTERCOM_I2C/I2C_BLACK_BOX.png)
+
+##Diagrama de estados 
+
+#Descripción del módulo esclavo: INA219 
+Antes que nada, es necesario aclarar las diferencias existentes entre el INA219 y la breakout board del INA219, el primero consiste en el integrado como tal, mientras que el segundo contiene por defecto una resistencia shunt de 0.1 ohms, dos resistencias de 10 kohms asociadas con las lineas de SDA y SCL, además de traer preconfigurada la dirección del modulo con dos resistencias pulldown de 10 kohms.
+
+![INA219](https://bitbucket.org/supervisinenergtica/energy_supervision/wiki/Imagenes/INTERCOM_I2C/INA219.png)
+
+##Registros empleados por el INA219
+
+Todos los registros de 16 bits del INA219 son en realidad dos bytes de 8 bits cada uno enviados por medio de la interfaz I2C
+
+###Registro de configuración HEX 00 BIN 0000 0000 (Read/Write)
+
+Significado de cada uno de los bits empleados al momento de escribir en esta dirección  
+
+   | Bit      | Nombre   | Descripción                         |  
+   | -------- | -------- | ----------------------------------- |  
+   | D15      | RST      | Reset                               |  
+   | D14      | -        | -                                   |  
+   | D13      | BRNG     | Bus Voltage Range                   |  
+   | D12      | PG1      | PGA (Shunt Voltage Only)            |  
+   | D11      | PG0      | PGA (Shunt Voltage Only)            |  
+   | D10      | BADC4    | BADC Bus ADC Resolution/Averaging   |  
+   | D09      | BADC3    | BADC Bus ADC Resolution/Averaging   |  
+   | D08      | BADC2    | BADC Bus ADC Resolution/Averaging   |  
+   | D07      | BADC1    | BADC Bus ADC Resolution/Averaging   |  
+   | D06      | SADC4    | SADC Shunt ADC Resolution/Averaging |  
+   | D05      | SADC3    | SADC Shunt ADC Resolution/Averaging |  
+   | D04      | SADC2    | SADC Shunt ADC Resolution/Averaging |  
+   | D03      | SADC1    | SADC Shunt ADC Resolution/Averaging |  
+   | D02      | MODE3    | Operating Mode                      |  
+   | D01      | MODE2    | Operating Mode                      |  
+   | D00      | MODE1    | Operating Mode                      |  
+
+* D15 reset por defecto se deja cero, en caso de ser 1 se resetea todo el ina a la configuracion por defecto
+
+* D14-D13 rango de lecturas del bus
+
+* D12-D11 PGA config 
+Hace referencia a la configuracion del Power Gain Amplifier
+Cuando leo voltajes en la resistencia shunt, esta configuracion me permite modificar la ganancia que tendra el amplificador asociado al mismo
+
+* D10-D07 BADC Bus ADC Resolution/Averaging
+These bits adjust the Bus ADC resolution (9-, 10-, 11-, or 12-bit) or set the number of samples used when
+averaging results for the Bus Voltage Register (02h).
+
+* D06-D03 SADC Shunt ADC Resolution/Averaging
+These bits adjust the Shunt ADC resolution (9-, 10-, 11-, or 12-bit) or set the number of samples used when
+averaging results for the Shunt Voltage Register (01h).
+
+* D02-D00 Operating Mode
+Selects continuous, triggered, or power-down mode of operation. These bits default to continuous shunt and bus
+measurement mode.
+
+Registros recomendados por Adafruit
+
+   | Bit      | Nombre   | 32V 2A | 32V 1A | 16V 0.4A |  
+   | -------- | -------- | ------ | ------ | -------- |  
+   | D15      | RST      | 0      | 0      | 0        |  
+   | D14      | -        | 0      | 0      | 0        |  
+   | D13      | BRNG     | 1      | 1      | 0        |  
+   | D12      | PG1      | 1      | 1      | 0        |  
+   | D11      | PG0      | 1      | 1      | 0        |  
+   | D10      | BADC4    | 1      | 1      | 1        |  
+   | D09      | BADC3    | 0      | 0      | 0        |  
+   | D08      | BADC2    | 0      | 0      | 0        |  
+   | D07      | BADC1    | 0      | 0      | 0        |  
+   | D06      | SADC4    | 0      | 0      | 0        |  
+   | D05      | SADC3    | 0      | 0      | 0        |  
+   | D04      | SADC2    | 1      | 1      | 1        |  
+   | D03      | SADC1    | 1      | 1      | 1        |  
+   | D02      | MODE3    | 1      | 1      | 1        |  
+   | D01      | MODE2    | 1      | 1      | 1        |  
+   | D00      | MODE1    | 1      | 1      | 1        |  
+
+#Referencias
+
+[^fn1]: Hilux, Mountain Bike [Unibike Mission 2010], http://www.blendswap.com/blends/view/72436, editado para cumplir los requerimientos del proyecto por atsk. 
+
+
+
+
+
+
+
+
+
+
+
+
+

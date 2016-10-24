@@ -1,0 +1,365 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : xc7a100t-csg324-3
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : bin2bcd
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 1
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/bin2bcd/bin2bcd/bin2bcd.v" into library work
+Parsing module <bin2bcd>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <bin2bcd>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <bin2bcd>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/bin2bcd/bin2bcd/bin2bcd.v".
+    Found 4-bit register for signal <tmp>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <init>.
+    Found 1-bit register for signal <bol>.
+    Found 30-bit register for signal <finaldd>.
+    Found 4-bit adder for signal <tmp[3]_GND_1_o_add_7_OUT> created at line 69.
+    Found 4-bit adder for signal <finaldd[29]_GND_1_o_add_9_OUT> created at line 74.
+    Found 4-bit adder for signal <finaldd[25]_GND_1_o_add_11_OUT> created at line 77.
+    Found 4-bit adder for signal <finaldd[21]_GND_1_o_add_13_OUT> created at line 80.
+    Found 4-bit adder for signal <finaldd[17]_GND_1_o_add_15_OUT> created at line 83.
+    Found 4-bit comparator greater for signal <n0006> created at line 63
+    Found 4-bit comparator greater for signal <GND_1_o_finaldd[29]_LessThan_9_o> created at line 73
+    Found 4-bit comparator greater for signal <GND_1_o_finaldd[25]_LessThan_11_o> created at line 76
+    Found 4-bit comparator greater for signal <GND_1_o_finaldd[21]_LessThan_13_o> created at line 79
+    Found 4-bit comparator greater for signal <GND_1_o_finaldd[17]_LessThan_15_o> created at line 82
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  37 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+	inferred  26 Multiplexer(s).
+Unit <bin2bcd> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 4-bit adder                                           : 5
+# Registers                                            : 5
+ 1-bit register                                        : 3
+ 30-bit register                                       : 1
+ 4-bit register                                        : 1
+# Comparators                                          : 5
+ 4-bit comparator greater                              : 5
+# Multiplexers                                         : 26
+ 1-bit 2-to-1 multiplexer                              : 16
+ 30-bit 2-to-1 multiplexer                             : 6
+ 4-bit 2-to-1 multiplexer                              : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 4-bit adder                                           : 5
+# Registers                                            : 37
+ Flip-Flops                                            : 37
+# Comparators                                          : 5
+ 4-bit comparator greater                              : 5
+# Multiplexers                                         : 55
+ 1-bit 2-to-1 multiplexer                              : 46
+ 30-bit 2-to-1 multiplexer                             : 5
+ 4-bit 2-to-1 multiplexer                              : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <bin2bcd> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block bin2bcd, actual ratio is 0.
+FlipFlop finaldd_29 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_28 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_27 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_26 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_25 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_24 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_23 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_22 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_21 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_20 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_19 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_18 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_17 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_16 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_15 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop finaldd_14 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop done has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 54
+ Flip-Flops                                            : 54
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : project.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 83
+#      INV                         : 1
+#      LUT2                        : 14
+#      LUT3                        : 3
+#      LUT4                        : 9
+#      LUT5                        : 10
+#      LUT6                        : 46
+# FlipFlops/Latches                : 54
+#      FD                          : 46
+#      FDR                         : 2
+#      FDRE                        : 4
+#      FDS                         : 1
+#      FDSE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 33
+#      IBUF                        : 16
+#      OBUF                        : 17
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              37  out of  126800     0%  
+ Number of Slice LUTs:                   83  out of  63400     0%  
+    Number used as Logic:                83  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     83
+   Number with an unused Flip Flop:      46  out of     83    55%  
+   Number with an unused LUT:             0  out of     83     0%  
+   Number of fully used LUT-FF pairs:    37  out of     83    44%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          34
+ Number of bonded IOBs:                  34  out of    210    16%  
+    IOB Flip Flops/Latches:              17
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clkin                              | BUFGP                  | 54    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.051ns (Maximum Frequency: 487.591MHz)
+   Minimum input arrival time before clock: 1.748ns
+   Maximum output required time after clock: 0.640ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clkin'
+  Clock period: 2.051ns (frequency: 487.591MHz)
+  Total number of paths / destination ports: 728 / 66
+-------------------------------------------------------------------------
+Delay:               2.051ns (Levels of Logic = 3)
+  Source:            finaldd_16 (FF)
+  Destination:       finaldd_14 (FF)
+  Source Clock:      clkin rising
+  Destination Clock: clkin rising
+
+  Data Path: finaldd_16 to finaldd_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.361   0.570  finaldd_16 (finaldd_16)
+     LUT4:I0->O            4   0.097   0.525  GND_1_o_finaldd[17]_LessThan_15_o1 (GND_1_o_finaldd[17]_LessThan_15_o)
+     LUT6:I3->O            1   0.097   0.295  Mmux_finaldd[29]_finaldd[29]_mux_24_OUT131 (Mmux_finaldd[29]_finaldd[29]_mux_24_OUT13)
+     LUT6:I5->O            2   0.097   0.000  Mmux_finaldd[29]_finaldd[29]_mux_24_OUT132 (finaldd[29]_finaldd[29]_mux_24_OUT<15>)
+     FD:D                      0.008          finaldd_15
+    ----------------------------------------
+    Total                      2.051ns (0.660ns logic, 1.391ns route)
+                                       (32.2% logic, 67.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clkin'
+  Total number of paths / destination ports: 231 / 66
+-------------------------------------------------------------------------
+Offset:              1.748ns (Levels of Logic = 3)
+  Source:            reset (PAD)
+  Destination:       finaldd_14 (FF)
+  Destination Clock: clkin rising
+
+  Data Path: reset to finaldd_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            38   0.001   0.801  reset_IBUF (reset_IBUF)
+     LUT6:I0->O           12   0.097   0.744  Mmux_finaldd[29]_finaldd[29]_mux_24_OUT1121 (Mmux_finaldd[29]_finaldd[29]_mux_24_OUT112)
+     LUT6:I0->O            2   0.097   0.000  Mmux_finaldd[29]_finaldd[29]_mux_24_OUT132 (finaldd[29]_finaldd[29]_mux_24_OUT<15>)
+     FD:D                      0.008          finaldd_15
+    ----------------------------------------
+    Total                      1.748ns (0.203ns logic, 1.545ns route)
+                                       (11.6% logic, 88.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clkin'
+  Total number of paths / destination ports: 17 / 17
+-------------------------------------------------------------------------
+Offset:              0.640ns (Levels of Logic = 1)
+  Source:            finaldd_29_1 (FF)
+  Destination:       tho<3> (PAD)
+  Source Clock:      clkin rising
+
+  Data Path: finaldd_29_1 to tho<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.361   0.279  finaldd_29_1 (finaldd_29_1)
+     OBUF:I->O                 0.000          tho_3_OBUF (tho<3>)
+    ----------------------------------------
+    Total                      0.640ns (0.361ns logic, 0.279ns route)
+                                       (56.4% logic, 43.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clkin
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clkin          |    2.051|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 12.11 secs
+ 
+--> 
+
+
+Total memory usage is 500060 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

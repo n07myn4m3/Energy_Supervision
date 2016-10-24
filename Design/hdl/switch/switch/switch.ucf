@@ -1,0 +1,27 @@
+CONFIG VCCAUX = "3.3" ;
+
+NET "clk"           LOC = "H17"  | IOSTANDARD = LVTTL;
+NET "clk" TNM_NET = "clk" ;
+TIMESPEC "TS_clkin" = PERIOD "clk" 20000 ps INPUT_JITTER 200 ps;
+
+
+# leds
+NET "MODULE_A"           LOC = "V16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; # green @ HDMI 
+NET "MODULE_B"           LOC = "U16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; # red @ HDMI
+NET "MODULE_C"           LOC = "A16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; # green @ MSD
+NET "MODULE_D"           LOC = "A15"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; # red @ MSD
+NET "MODULE_E"           LOC = "A12"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; # red @ USB
+
+
+# buttons
+NET "ENABLE"      LOC = "L12"  | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "RESET"       LOC = "K12"  | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "DATA<0>"     LOC = "K13"  | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "DATA<1>"     LOC = "K14"  | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "DATA<2>"     LOC = "H12"  | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "DATA<3>"     LOC = "G13"  | IOSTANDARD = LVTTL | PULLDOWN ;
+NET "DATA<4>"     LOC = "J13"  | IOSTANDARD = LVTTL | PULLDOWN ;
+
+
+
+

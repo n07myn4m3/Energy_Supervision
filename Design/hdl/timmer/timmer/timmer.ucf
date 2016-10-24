@@ -1,0 +1,13 @@
+CONFIG VCCAUX = "3.3" ;
+
+NET "Clk"           LOC = "H17"  | IOSTANDARD = LVTTL;
+NET "Clk" TNM_NET = "Clk" ;
+TIMESPEC "TS_clkin" = PERIOD "Clk" 20000 ps INPUT_JITTER 200 ps;
+
+
+# leds
+NET "ClkOut"      LOC = "V16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; # green @ HDMI 
+
+
+# buttons
+NET "Reset"       LOC = "L12"  | IOSTANDARD = LVTTL | PULLDOWN ; #C15

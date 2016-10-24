@@ -1,0 +1,106 @@
+# VERSION FUNCIONAL
+# -----------------Nexys 2----------------------------
+# Clock
+#NET "sys_clk_i"         LOC = "B8";		# 50MHz Clock
+# Reset
+#NET "sys_rst_i"      	LOC = "B18";	# Button0
+# LEDs
+#NET "gp_out0<0>"      	LOC = "J14"; 	# LED0
+#NET "gp_out0<1>"      	LOC = "J15"; 	# LED1
+#NET "gp_out0<2>"      	LOC = "K15"; 	# LED2
+#NET "gp_out0<3>"      	LOC = "K14"; 	# LED3
+#NET "gp_out0<4>"      	LOC = "E17"; 	# LED4
+#NET "gp_out0<5>"      	LOC = "P15"; 	# LED5
+#NET "gp_out0<6>"      	LOC = "F4"; 	# LED6
+#NET "gp_out0<7>"      	LOC = "R4"; 	# LED7
+# Switches
+#NET "gp_in0<0>"       	LOC = "G18";	# Switch0
+#NET "gp_in0<1>"       	LOC = "H18";	# Switch1
+#NET "gp_in0<2>"       	LOC = "K18";	# Switch2
+#NET "gp_in0<3>"       	LOC = "K17";	# Switch3
+#NET "gp_in0<4>"       	LOC = "L14";	# Switch4
+#NET "gp_in0<5>"       	LOC = "L13";	# Switch5
+#NET "gp_in0<6>"       	LOC = "N17";	# Switch6
+#NET "gp_in0<7>"       	LOC = "R17";	# Switch7
+# ----------------------------------------------------
+
+# -----------------Nexys 4DDR----------------------------
+## Clock	
+
+NET "sys_clk_i"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";					#Bank = 35, Pin name = #IO_L12P_T1_MRCC_35,					Sch name = clk100mhz
+NET "sys_clk_i" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100 MHz HIGH 50%; 
+
+## Reset
+
+NET "sys_rst_i"          LOC=J15 | IOSTANDARD=LVCMOS33; # sw0
+
+## Uart TX
+
+NET "uart_tx"   LOC=D4 | IOSTANDARD=LVCMOS33; #RS2232 RX uart_rxd_out
+
+## LEDs
+
+NET "gp_out0<0>"         LOC=H17 | IOSTANDARD=LVCMOS33; # LED0
+NET "gp_out0<1>"         LOC=K15 | IOSTANDARD=LVCMOS33; # LED1
+NET "gp_out0<2>"         LOC=J13 | IOSTANDARD=LVCMOS33; # LED2
+NET "gp_out0<3>"         LOC=N14 | IOSTANDARD=LVCMOS33; # LED3
+NET "gp_out0<4>"         LOC=R18 | IOSTANDARD=LVCMOS33; # LED4
+NET "gp_out0<5>"         LOC=V17 | IOSTANDARD=LVCMOS33; # LED5
+NET "gp_out0<6>"         LOC=U17 | IOSTANDARD=LVCMOS33; # LED6
+NET "gp_out0<7>"         LOC=U16 | IOSTANDARD=LVCMOS33; # LED7
+
+
+## Switches
+
+NET "gp_in0<0>"          LOC=L16 | IOSTANDARD=LVCMOS33; #sw1
+NET "gp_in0<1>"          LOC=M13 | IOSTANDARD=LVCMOS33; #sw2
+NET "gp_in0<2>"          LOC=R15 | IOSTANDARD=LVCMOS33; #sw3
+NET "gp_in0<3>"          LOC=R17 | IOSTANDARD=LVCMOS33; #sw4
+NET "gp_in0<4>"          LOC=T18 | IOSTANDARD=LVCMOS33; #sw5
+NET "gp_in0<5>"          LOC=U18 | IOSTANDARD=LVCMOS33; #sw6
+NET "gp_in0<6>"          LOC=R13 | IOSTANDARD=LVCMOS33; #sw7
+NET "gp_in0<7>"          LOC=T8  | IOSTANDARD=LVCMOS18; #sw8
+
+## I2C
+
+NET "sda"          LOC=C17 | IOSTANDARD=LVCMOS33; #pmod ja<1>
+NET "scl"          LOC=D14 | IOSTANDARD=LVCMOS33; #pmod jb<1>
+
+# ----------------------------------------------------
+
+# -----------------Pipistrello----------------------------
+
+# Clock	
+#NET "sys_clk_i"           LOC = "H17"  | IOSTANDARD = LVTTL;
+#NET "sys_clk_i" TNM_NET = "sys_clk_i" ;
+#TIMESPEC "TS_clkin" = PERIOD "sys_clk_i" 20000 ps INPUT_JITTER 200 ps;
+
+# Reset
+#NET "sys_rst_i"        LOC = "F17" | IOSTANDARD = LVTTL | PULLDOWN ; #C00
+#NET "sys_rst_i"         CLOCK_DEDICATED_ROUTE = FALSE;
+
+# Uart TX
+#NET "uart_tx"         	LOC = "D4"  | IOSTANDARD = "LVCMOS33";	# RS2232 RX
+
+# LEDs
+#NET "gp_out0<0>"       LOC = "D18"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ; #A15
+#NET "gp_out0<1>"       LOC = "F18"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ; #C14
+#NET "gp_out0<2>"       LOC = "H18"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ; #C13
+#NET "gp_out0<3>"       LOC = "H15"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ; #C12
+#NET "gp_out0<4>"       LOC = "J16"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ; #C10
+#NET "gp_out0<5>"       LOC = "K17"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ; #C09
+#NET "gp_out0<6>"       LOC = "K15"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ; #C08
+#NET "gp_out0<7>"       LOC = "L17"  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ; #C07
+
+# Switches
+#NET "gp_in0<0>"       LOC = "L12"  | IOSTANDARD = LVTTL | PULLDOWN ; #C15
+#NET "gp_in0<1>"       LOC = "K12"  | IOSTANDARD = LVTTL | PULLDOWN ; #C14
+#NET "gp_in0<2>"       LOC = "K13"  | IOSTANDARD = LVTTL | PULLDOWN ; #C13
+#NET "gp_in0<3>"       LOC = "K14"  | IOSTANDARD = LVTTL | PULLDOWN ; #C12
+#NET "gp_in0<4>"       LOC = "H12"  | IOSTANDARD = LVTTL | PULLDOWN ; #C10
+#NET "gp_in0<5>"       LOC = "G13"  | IOSTANDARD = LVTTL | PULLDOWN ; #C09
+#NET "gp_in0<6>"       LOC = "J13"  | IOSTANDARD = LVTTL | PULLDOWN ; #C08
+#NET "gp_in0<7>"       LOC = "H13"  | IOSTANDARD = LVTTL | PULLDOWN ; #C07
+
+# ----------------------------------------------------

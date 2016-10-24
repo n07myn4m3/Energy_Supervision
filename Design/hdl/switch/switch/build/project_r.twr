@@ -1,0 +1,167 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx_ise/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -v 25 project_r.ncd
+project.pcf
+
+Design file:              project_r.ncd
+Physical constraint file: project.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report, limited to 25 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clkin = PERIOD TIMEGRP "clk" 20 ns HIGH 50% INPUT_JITTER 
+0.2 ns;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   1.730ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clkin = PERIOD TIMEGRP "clk" 20 ns HIGH 50% INPUT_JITTER 0.2 ns;
+--------------------------------------------------------------------------------
+Slack: 18.270ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X3Y7.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 18.940ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.530ns (Tispwh)
+  Physical resource: DATA_OUT<0>/SR
+  Logical resource: DATA_OUT_0/SR
+  Location pin: ILOGIC_X27Y74.SR
+  Clock network: RESET_IBUF
+--------------------------------------------------------------------------------
+Slack: 18.940ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.530ns (Tispwh)
+  Physical resource: DATA_OUT<1>/SR
+  Logical resource: DATA_OUT_1/SR
+  Location pin: ILOGIC_X27Y64.SR
+  Clock network: RESET_IBUF
+--------------------------------------------------------------------------------
+Slack: 18.940ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.530ns (Tispwh)
+  Physical resource: DATA_OUT<2>/SR
+  Logical resource: DATA_OUT_2/SR
+  Location pin: ILOGIC_X27Y79.SR
+  Clock network: RESET_IBUF
+--------------------------------------------------------------------------------
+Slack: 18.940ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.530ns (Tispwh)
+  Physical resource: DATA_OUT<3>/SR
+  Logical resource: DATA_OUT_3/SR
+  Location pin: ILOGIC_X27Y78.SR
+  Clock network: RESET_IBUF
+--------------------------------------------------------------------------------
+Slack: 18.940ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.530ns (Tispwh)
+  Physical resource: DATA_OUT<4>/SR
+  Logical resource: DATA_OUT_4/SR
+  Location pin: ILOGIC_X27Y65.SR
+  Clock network: RESET_IBUF
+--------------------------------------------------------------------------------
+Slack: 18.941ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.059ns (944.287MHz) (Tickper)
+  Physical resource: DATA_OUT<0>/CLK0
+  Logical resource: DATA_OUT_0/CLK0
+  Location pin: ILOGIC_X27Y74.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.941ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.059ns (944.287MHz) (Tickper)
+  Physical resource: DATA_OUT<1>/CLK0
+  Logical resource: DATA_OUT_1/CLK0
+  Location pin: ILOGIC_X27Y64.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.941ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.059ns (944.287MHz) (Tickper)
+  Physical resource: DATA_OUT<2>/CLK0
+  Logical resource: DATA_OUT_2/CLK0
+  Location pin: ILOGIC_X27Y79.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.941ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.059ns (944.287MHz) (Tickper)
+  Physical resource: DATA_OUT<3>/CLK0
+  Logical resource: DATA_OUT_3/CLK0
+  Location pin: ILOGIC_X27Y78.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.941ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.059ns (944.287MHz) (Tickper)
+  Physical resource: DATA_OUT<4>/CLK0
+  Logical resource: DATA_OUT_4/CLK0
+  Location pin: ILOGIC_X27Y65.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 0 paths, 0 nets, and 0 connections
+
+Design statistics:
+   Minimum period:   1.730ns{1}   (Maximum frequency: 578.035MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sat Mar 19 14:01:10 2016 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 434 MB
+
+
+

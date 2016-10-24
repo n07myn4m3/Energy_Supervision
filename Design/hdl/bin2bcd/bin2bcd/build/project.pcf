@@ -1,0 +1,57 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sat Jun 04 18:02:59 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "tho<2>" LOCATE = SITE "V12" LEVEL 1;
+COMP "tho<3>" LOCATE = SITE "V11" LEVEL 1;
+COMP "data<0>" LOCATE = SITE "J15" LEVEL 1;
+COMP "data<1>" LOCATE = SITE "L16" LEVEL 1;
+COMP "enable" LOCATE = SITE "V10" LEVEL 1;
+COMP "hun<0>" LOCATE = SITE "V16" LEVEL 1;
+COMP "data<2>" LOCATE = SITE "M13" LEVEL 1;
+COMP "hun<1>" LOCATE = SITE "T15" LEVEL 1;
+COMP "data<3>" LOCATE = SITE "R15" LEVEL 1;
+COMP "hun<2>" LOCATE = SITE "U14" LEVEL 1;
+COMP "data<4>" LOCATE = SITE "R17" LEVEL 1;
+COMP "hun<3>" LOCATE = SITE "T16" LEVEL 1;
+COMP "data<5>" LOCATE = SITE "T18" LEVEL 1;
+COMP "data<6>" LOCATE = SITE "U18" LEVEL 1;
+COMP "data<7>" LOCATE = SITE "R13" LEVEL 1;
+COMP "data<8>" LOCATE = SITE "T8" LEVEL 1;
+COMP "data<9>" LOCATE = SITE "U8" LEVEL 1;
+COMP "ten<0>" LOCATE = SITE "R18" LEVEL 1;
+COMP "ten<1>" LOCATE = SITE "V17" LEVEL 1;
+COMP "ten<2>" LOCATE = SITE "U17" LEVEL 1;
+COMP "ten<3>" LOCATE = SITE "U16" LEVEL 1;
+COMP "data<10>" LOCATE = SITE "R16" LEVEL 1;
+COMP "data<11>" LOCATE = SITE "T13" LEVEL 1;
+COMP "data<12>" LOCATE = SITE "H6" LEVEL 1;
+COMP "data<13>" LOCATE = SITE "U12" LEVEL 1;
+COMP "clkin" LOCATE = SITE "E3" LEVEL 1;
+COMP "done" LOCATE = SITE "R12" LEVEL 1;
+COMP "uni<0>" LOCATE = SITE "H17" LEVEL 1;
+COMP "reset" LOCATE = SITE "U11" LEVEL 1;
+COMP "uni<1>" LOCATE = SITE "K15" LEVEL 1;
+COMP "uni<2>" LOCATE = SITE "J13" LEVEL 1;
+COMP "uni<3>" LOCATE = SITE "N14" LEVEL 1;
+COMP "tho<0>" LOCATE = SITE "V15" LEVEL 1;
+COMP "tho<1>" LOCATE = SITE "V14" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "bol" BEL "tmp_0" BEL "tmp_1" BEL "tmp_2" BEL
+        "tmp_3" BEL "finaldd_0" BEL "finaldd_1" BEL "finaldd_2" BEL
+        "finaldd_3" BEL "finaldd_4" BEL "finaldd_5" BEL "finaldd_6" BEL
+        "finaldd_7" BEL "finaldd_8" BEL "finaldd_9" BEL "finaldd_10" BEL
+        "finaldd_11" BEL "finaldd_12" BEL "finaldd_13" BEL "finaldd_14" BEL
+        "finaldd_15" BEL "finaldd_16" BEL "finaldd_17" BEL "finaldd_18" BEL
+        "finaldd_19" BEL "finaldd_20" BEL "finaldd_21" BEL "finaldd_22" BEL
+        "finaldd_23" BEL "finaldd_24" BEL "finaldd_25" BEL "finaldd_26" BEL
+        "finaldd_27" BEL "finaldd_28" BEL "finaldd_29" BEL "init" BEL "done"
+        BEL "clkin_BUFGP/BUFG" BEL "finaldd_29_1" BEL "finaldd_28_1" BEL
+        "finaldd_27_1" BEL "finaldd_26_1" BEL "finaldd_25_1" BEL
+        "finaldd_24_1" BEL "finaldd_23_1" BEL "finaldd_22_1" BEL
+        "finaldd_21_1" BEL "finaldd_20_1" BEL "finaldd_19_1" BEL
+        "finaldd_18_1" BEL "finaldd_17_1" BEL "finaldd_16_1" BEL
+        "finaldd_15_1" BEL "finaldd_14_1" BEL "done_1";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

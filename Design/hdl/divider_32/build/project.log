@@ -1,0 +1,454 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : xC3s500e-fg320
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : peripheral_division32
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 1
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../peripheral_division32.v" in library work
+Compiling verilog file "../division32/division32.v" in library work
+Module <peripheral_division32> compiled
+Module <division32> compiled
+No errors in compilation
+Analysis of file <"project.src"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <peripheral_division32> in library <work>.
+
+Analyzing hierarchy for module <division32> in library <work> with parameters.
+	S_HI = "1"
+	S_IDLE = "0"
+	S_LO = "0"
+	S_RUN = "1"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <peripheral_division32>.
+Module <peripheral_division32> is correct for synthesis.
+ 
+Analyzing module <division32> in library <work>.
+	S_HI = 1'b1
+	S_IDLE = 1'b0
+	S_LO = 1'b0
+	S_RUN = 1'b1
+Module <division32> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <division32>.
+    Related source file is "../division32/division32.v".
+    Found 32-bit register for signal <quotient>.
+    Found 1-bit register for signal <done>.
+    Found 32-bit adder for signal <next_q$addsub0000> created at line 111.
+    Found 32-bit adder for signal <next_quotient$addsub0000> created at line 121.
+    Found 63-bit comparator lessequal for signal <next_quotient$cmp_le0000> created at line 121.
+    Found 63-bit subtractor for signal <next_r$addsub0000> created at line 112.
+    Found 63-bit register for signal <p>.
+    Found 32-bit register for signal <q>.
+    Found 63-bit register for signal <r>.
+    Found 1-bit register for signal <state>.
+    Found 32-bit register for signal <t>.
+    Summary:
+	inferred 224 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <division32> synthesized.
+
+
+Synthesizing Unit <peripheral_division32>.
+    Related source file is "../peripheral_division32.v".
+    Found 16-bit register for signal <d_out>.
+    Found 32-bit register for signal <dividend>.
+    Found 32-bit register for signal <divisor>.
+    Found 1-bit register for signal <go>.
+    Summary:
+	inferred  81 D-type flip-flop(s).
+Unit <peripheral_division32> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 2
+ 63-bit subtractor                                     : 1
+# Registers                                            : 73
+ 1-bit register                                        : 67
+ 16-bit register                                       : 1
+ 32-bit register                                       : 3
+ 63-bit register                                       : 2
+# Comparators                                          : 1
+ 63-bit comparator lessequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 2
+ 63-bit subtractor                                     : 1
+# Registers                                            : 305
+ Flip-Flops                                            : 305
+# Comparators                                          : 1
+ 63-bit comparator lessequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <peripheral_division32> ...
+
+Optimizing unit <division32> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 305
+ Flip-Flops                                            : 305
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : project.ngr
+Top Level Output File Name         : project.ngc
+Output Format                      : NGC
+Optimization Goal                  : Area
+Keep Hierarchy                     : no
+
+Design Statistics
+# IOs                              : 41
+
+Cell Usage :
+# BELS                             : 790
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 221
+#      LUT3                        : 104
+#      LUT4                        : 115
+#      MUXCY                       : 187
+#      MUXF5                       : 33
+#      VCC                         : 1
+#      XORCY                       : 127
+# FlipFlops/Latches                : 305
+#      FD_1                        : 16
+#      FDC                         : 224
+#      FDE_1                       : 65
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 40
+#      IBUF                        : 24
+#      OBUF                        : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                      277  out of   4656     5%  
+ Number of Slice Flip Flops:            289  out of   9312     3%  
+ Number of 4 input LUTs:                441  out of   9312     4%  
+ Number of IOs:                          41
+ Number of bonded IOBs:                  41  out of    232    17%  
+    IOB Flip Flops:                      16
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 305   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | IBUF                   | 224   |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 11.251ns (Maximum Frequency: 88.879MHz)
+   Minimum input arrival time before clock: 5.359ns
+   Maximum output required time after clock: 4.040ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 11.251ns (frequency: 88.879MHz)
+  Total number of paths / destination ports: 127414 / 240
+-------------------------------------------------------------------------
+Delay:               11.251ns (Levels of Logic = 97)
+  Source:            division32uut/r_1 (FF)
+  Destination:       division32uut/quotient_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: division32uut/r_1 to division32uut/quotient_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.514   0.603  division32uut/r_1 (division32uut/r_1)
+     LUT2:I0->O            1   0.612   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_lut<1> (division32uut/Mcompar_next_quotient_cmp_le0000_lut<1>)
+     MUXCY:S->O            1   0.404   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<1> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<2> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<3> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<4> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<5> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<6> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<7> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<7>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<8> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<9> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<9>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<10> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<10>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<11> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<11>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<12> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<12>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<13> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<13>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<14> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<14>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<15> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<15>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<16> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<16>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<17> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<17>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<18> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<18>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<19> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<19>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<20> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<20>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<21> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<21>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<22> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<22>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<23> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<23>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<24> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<24>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<25> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<25>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<26> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<26>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<27> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<27>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<28> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<28>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<29> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<29>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<30> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<30>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<31> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<31>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<32> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<32>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<33> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<33>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<34> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<34>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<35> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<35>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<36> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<36>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<37> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<37>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<38> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<38>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<39> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<39>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<40> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<40>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<41> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<41>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<42> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<42>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<43> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<43>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<44> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<44>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<45> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<45>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<46> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<46>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<47> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<47>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<48> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<48>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<49> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<49>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<50> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<50>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<51> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<51>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<52> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<52>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<53> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<53>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<54> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<54>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<55> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<55>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<56> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<56>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<57> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<57>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<58> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<58>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<59> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<59>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<60> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<60>)
+     MUXCY:CI->O           1   0.051   0.000  division32uut/Mcompar_next_quotient_cmp_le0000_cy<61> (division32uut/Mcompar_next_quotient_cmp_le0000_cy<61>)
+     MUXCY:CI->O         127   0.399   1.128  division32uut/Mcompar_next_quotient_cmp_le0000_cy<62> (division32uut/next_quotient_cmp_le0000)
+     LUT3:I2->O            1   0.612   0.000  division32uut/Madd_next_quotient_addsub0000_lut<0> (division32uut/Madd_next_quotient_addsub0000_lut<0>)
+     MUXCY:S->O            1   0.404   0.000  division32uut/Madd_next_quotient_addsub0000_cy<0> (division32uut/Madd_next_quotient_addsub0000_cy<0>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<1> (division32uut/Madd_next_quotient_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<2> (division32uut/Madd_next_quotient_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<3> (division32uut/Madd_next_quotient_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<4> (division32uut/Madd_next_quotient_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<5> (division32uut/Madd_next_quotient_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<6> (division32uut/Madd_next_quotient_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<7> (division32uut/Madd_next_quotient_addsub0000_cy<7>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<8> (division32uut/Madd_next_quotient_addsub0000_cy<8>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<9> (division32uut/Madd_next_quotient_addsub0000_cy<9>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<10> (division32uut/Madd_next_quotient_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<11> (division32uut/Madd_next_quotient_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<12> (division32uut/Madd_next_quotient_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<13> (division32uut/Madd_next_quotient_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<14> (division32uut/Madd_next_quotient_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<15> (division32uut/Madd_next_quotient_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<16> (division32uut/Madd_next_quotient_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<17> (division32uut/Madd_next_quotient_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<18> (division32uut/Madd_next_quotient_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<19> (division32uut/Madd_next_quotient_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<20> (division32uut/Madd_next_quotient_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<21> (division32uut/Madd_next_quotient_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<22> (division32uut/Madd_next_quotient_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<23> (division32uut/Madd_next_quotient_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<24> (division32uut/Madd_next_quotient_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<25> (division32uut/Madd_next_quotient_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<26> (division32uut/Madd_next_quotient_addsub0000_cy<26>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<27> (division32uut/Madd_next_quotient_addsub0000_cy<27>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<28> (division32uut/Madd_next_quotient_addsub0000_cy<28>)
+     MUXCY:CI->O           1   0.052   0.000  division32uut/Madd_next_quotient_addsub0000_cy<29> (division32uut/Madd_next_quotient_addsub0000_cy<29>)
+     MUXCY:CI->O           0   0.051   0.000  division32uut/Madd_next_quotient_addsub0000_cy<30> (division32uut/Madd_next_quotient_addsub0000_cy<30>)
+     XORCY:CI->O           1   0.699   0.360  division32uut/Madd_next_quotient_addsub0000_xor<31> (division32uut/next_quotient_addsub0000<31>)
+     LUT4:I3->O            1   0.612   0.000  division32uut/next_quotient<31>1 (division32uut/next_quotient<31>)
+     FDC:D                     0.268          division32uut/quotient_31
+    ----------------------------------------
+    Total                     11.251ns (9.160ns logic, 2.092ns route)
+                                       (81.4% logic, 18.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 646 / 146
+-------------------------------------------------------------------------
+Offset:              5.359ns (Levels of Logic = 4)
+  Source:            cs (PAD)
+  Destination:       d_out_1 (FF)
+  Destination Clock: clk falling
+
+  Data Path: cs to d_out_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.106   0.603  cs_IBUF (cs_IBUF)
+     LUT4:I0->O            4   0.612   0.651  d_out_cmp_eq000111 (N3)
+     LUT3:I0->O           15   0.612   0.894  d_out_cmp_eq00021 (d_out_cmp_eq0002)
+     LUT4:I2->O            1   0.612   0.000  d_out_mux0000<9>1 (d_out_mux0000<9>)
+     FD_1:D                    0.268          d_out_9
+    ----------------------------------------
+    Total                      5.359ns (3.210ns logic, 2.149ns route)
+                                       (59.9% logic, 40.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              4.040ns (Levels of Logic = 1)
+  Source:            d_out_15 (FF)
+  Destination:       d_out<15> (PAD)
+  Source Clock:      clk falling
+
+  Data Path: d_out_15 to d_out<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD_1:C->Q             1   0.514   0.357  d_out_15 (d_out_15)
+     OBUF:I->O                 3.169          d_out_15_OBUF (d_out<15>)
+    ----------------------------------------
+    Total                      4.040ns (3.683ns logic, 0.357ns route)
+                                       (91.2% logic, 8.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 6.86 secs
+ 
+--> 
+
+
+Total memory usage is 513012 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

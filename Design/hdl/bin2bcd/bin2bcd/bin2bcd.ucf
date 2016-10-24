@@ -1,0 +1,107 @@
+## -----------------Nexys4 DDR-----------------------------
+
+## Clock signal
+NET "clkin"   LOC = "E3"	| IOSTANDARD = "LVCMOS33";					#Bank = 35, Pin name = #IO_L12P_T1_MRCC_35,					Sch name = clk100mhz
+NET "clkin" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100 MHz HIGH 50%; 
+
+## Switches
+NET "data<0>"          LOC=J15 | IOSTANDARD=LVCMOS33; #IO_L24N_T3_RS0_15          sw<0>
+NET "data<1>"          LOC=L16 | IOSTANDARD=LVCMOS33; #IO_L3N_T0_DQS_EMCCLK_14    sw<1>
+NET "data<2>"          LOC=M13 | IOSTANDARD=LVCMOS33; #IO_L6N_T0_D08_VREF_14      sw<2>
+NET "data<3>"          LOC=R15 | IOSTANDARD=LVCMOS33; #IO_L13N_T2_MRCC_14         sw<3>
+NET "data<4>"          LOC=R17 | IOSTANDARD=LVCMOS33; #IO_L12N_T1_MRCC_14         sw<4>
+NET "data<5>"          LOC=T18 | IOSTANDARD=LVCMOS33; #IO_L7N_T1_D10_14           sw<5>
+NET "data<6>"          LOC=U18 | IOSTANDARD=LVCMOS33; #IO_L17N_T2_A13_D29_14      sw<6>
+NET "data<7>"          LOC=R13 | IOSTANDARD=LVCMOS33; #IO_L5N_T0_D07_14           sw<7>
+NET "data<8>"          LOC=T8  | IOSTANDARD=LVCMOS18; #IO_L24N_T3_34              sw<8>
+NET "data<9>"          LOC=U8  | IOSTANDARD=LVCMOS18; #IO_25_34                   sw<9>
+NET "data<10>"         LOC=R16 | IOSTANDARD=LVCMOS33; #IO_L15P_T2_DQS_RDWR_B_14   sw<10>
+NET "data<11>"         LOC=T13 | IOSTANDARD=LVCMOS33; #IO_L23P_T3_A03_D19_14      sw<11>
+NET "data<12>"         LOC=H6  | IOSTANDARD=LVCMOS33; #IO_L24P_T3_35              sw<12>
+NET "data<13>"         LOC=U12 | IOSTANDARD=LVCMOS33; #IO_L20P_T3_A08_D24_14      sw<13>
+NET "reset"            LOC=U11 | IOSTANDARD=LVCMOS33; #IO_L19N_T3_A09_D25_VREF_14 sw<14>
+NET "enable"           LOC=V10 | IOSTANDARD=LVCMOS33; #IO_L21P_T3_DQS_14          sw<15>
+
+## LEDs
+NET "uni<0>"         LOC=H17 | IOSTANDARD=LVCMOS33; #IO_L18P_T2_A24_15            led<0>
+NET "uni<1>"         LOC=K15 | IOSTANDARD=LVCMOS33; #IO_L24P_T3_RS1_15            led<1>
+NET "uni<2>"         LOC=J13 | IOSTANDARD=LVCMOS33; #IO_L17N_T2_A25_15            led<2>
+NET "uni<3>"         LOC=N14 | IOSTANDARD=LVCMOS33; #IO_L8P_T1_D11_14             led<3>
+NET "ten<0>"         LOC=R18 | IOSTANDARD=LVCMOS33; #IO_L7P_T1_D09_14             led<4>
+NET "ten<1>"         LOC=V17 | IOSTANDARD=LVCMOS33; #IO_L18N_T2_A11_D27_14        led<5>
+NET "ten<2>"         LOC=U17 | IOSTANDARD=LVCMOS33; #IO_L17P_T2_A14_D30_14        led<6>
+NET "ten<3>"         LOC=U16 | IOSTANDARD=LVCMOS33; #IO_L18P_T2_A12_D28_14        led<7>
+NET "hun<0>"         LOC=V16 | IOSTANDARD=LVCMOS33; #IO_L16N_T2_A15_D31_14        led<8>
+NET "hun<1>"         LOC=T15 | IOSTANDARD=LVCMOS33; #IO_L14N_T2_SRCC_14           led<9>
+NET "hun<2>"        LOC=U14 | IOSTANDARD=LVCMOS33; #IO_L22P_T3_A05_D21_14        led<10> 
+NET "hun<3>"        LOC=T16 | IOSTANDARD=LVCMOS33; #IO_L15N_T2_DQS_DOUT_CSO_B_14 led<11>
+NET "tho<0>"        LOC=V15 | IOSTANDARD=LVCMOS33; #IO_L16P_T2_CSI_B_14          led<12>
+NET "tho<1>"        LOC=V14 | IOSTANDARD=LVCMOS33; #IO_L22N_T3_A04_D20_14        led<13>
+NET "tho<2>"        LOC=V12 | IOSTANDARD=LVCMOS33; #IO_L20N_T3_A07_D23_14        led<14>
+NET "tho<3>"        LOC=V11 | IOSTANDARD=LVCMOS33; #IO_L21N_T3_DQS_A06_D22_14    led<15>
+
+##LEDs_RGB
+NET "done"        LOC=R12 | IOSTANDARD=LVCMOS33; #IO_L5P_T0_D06_14
+
+## -----------------Pipistrello----------------------------
+
+## Clock	
+#NET "clkin"           LOC = "H17"  | IOSTANDARD = LVTTL;
+#NET "clkin" TNM_NET = "clkin" ;
+#TIMESPEC "TS_clkin" = PERIOD "clkin" 20000 ps INPUT_JITTER 200 ps;
+
+## LEDs
+#NET "tho<3>"        LOC = "L12"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C15
+#NET "tho<2>"        LOC = "K12"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C14
+#NET "tho<1>"        LOC = "K13"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C13
+#NET "tho<0>"        LOC = "K14"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C12
+#NET "hun<3>"        LOC = "H12"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C11
+#NET "hun<2>"        LOC = "G13"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C10
+#NET "hun<1>"        LOC = "J13"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C9
+#NET "hun<0>"        LOC = "H13"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C8
+#NET "ten<3>"        LOC = "H14"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C7
+#NET "ten<2>"        LOC = "F14"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C6
+#NET "ten<1>"        LOC = "G14"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C5
+#NET "ten<0>"        LOC = "F15"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C4
+#NET "uni<3>"        LOC = "G16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C3
+#NET "uni<2>"        LOC = "E16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C2
+#NET "uni<1>"        LOC = "F16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C1
+#NET "uni<0>"        LOC = "F17"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #C0
+
+#NET "done"           LOC = "U17"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B15
+#NET "NO USAR"       LOC = "T18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B14
+#NET "NO USAR"       LOC = "P18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B13
+#NET "NO USAR"       LOC = "P15"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B12
+#NET "NO USAR"       LOC = "N15"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B11
+#NET "NO USAR"       LOC = "N18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B10
+#NET "NO USAR"        LOC = "M18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B9
+#NET "NO USAR"        LOC = "L16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B8
+#NET "NO USAR"        LOC = "L18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B7
+#NET "NO USAR"        LOC = "K16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B6
+#NET "NO USAR"        LOC = "K18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B5
+#NET "NO USAR"        LOC = "J18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B4
+#NET "NO USAR"        LOC = "H16"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B3
+#NET "NO USAR"        LOC = "G18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B2
+#NET "NO USAR"        LOC = "E18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B1
+#NET "NO USAR"        LOC = "C18"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; #B0
+
+## Switches
+#NET "enable"         LOC = "D18"  | IOSTANDARD = LVTTL | PULLDOWN ; #A15
+#NET "reset"          LOC = "F18"  | IOSTANDARD = LVTTL | PULLDOWN ; #A14
+#NET "data<0>"        LOC = "H18"  | IOSTANDARD = LVTTL | PULLDOWN ; #A13
+#NET "data<1>"        LOC = "H15"  | IOSTANDARD = LVTTL | PULLDOWN ; #A12
+#NET "data<2>"        LOC = "J16"  | IOSTANDARD = LVTTL | PULLDOWN ; #A11
+#NET "data<3>"        LOC = "K17"  | IOSTANDARD = LVTTL | PULLDOWN ; #A10
+#NET "data<4>"        LOC = "K15"  | IOSTANDARD = LVTTL | PULLDOWN ; #A09
+#NET "data<5>"        LOC = "L17"  | IOSTANDARD = LVTTL | PULLDOWN ; #A08
+#NET "data<6>"        LOC = "L15"  | IOSTANDARD = LVTTL | PULLDOWN ; #A07
+#NET "data<7>"        LOC = "M16"  | IOSTANDARD = LVTTL | PULLDOWN ; #A06
+#NET "data<8>"        LOC = "N17"  | IOSTANDARD = LVTTL | PULLDOWN ; #A05
+#NET "data<9>"        LOC = "N16"  | IOSTANDARD = LVTTL | PULLDOWN ; #A04
+#NET "data<10>"       LOC = "P16"  | IOSTANDARD = LVTTL | PULLDOWN ; #A03
+#NET "data<11>"       LOC = "P17"  | IOSTANDARD = LVTTL | PULLDOWN ; #A02
+#NET "data<12>"       LOC = "T17"  | IOSTANDARD = LVTTL | PULLDOWN ; #A01
+#NET "data<13>"       LOC = "U18"  | IOSTANDARD = LVTTL | PULLDOWN ; #A00
+
+# ----------------------------------------------------

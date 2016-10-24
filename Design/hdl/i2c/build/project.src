@@ -1,0 +1,2 @@
+verilog work ../peripheral_i2c.v
+verilog work ..//i2c_master.v

@@ -1,0 +1,2 @@
+verilog work ../peripheral_bin2bcd.v
+verilog work ../bin2bcd/bin2bcd.v

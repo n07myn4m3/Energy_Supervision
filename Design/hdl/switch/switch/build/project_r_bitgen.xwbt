@@ -1,0 +1,7 @@
+INFILE=/home/nixtropy/Documentos/Electronica_digital/02_ejercicios/proyecto/switch/build/project_r.ncd
+OUTFILE=/home/nixtropy/Documentos/Electronica_digital/02_ejercicios/proyecto/switch/build/project_r.bit
+FAMILY=Spartan6
+PART=xc6slx45-3csg324
+WORKINGDIR=/home/nixtropy/Documentos/Electronica_digital/02_ejercicios/proyecto/switch/build
+LICENSE=WebPack
+USER_INFO=211079392_0_0_238

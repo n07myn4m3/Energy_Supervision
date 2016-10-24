@@ -1,0 +1,7 @@
+INFILE=/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/build/project_r.ncd
+OUTFILE=/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/build/project_r.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/build
+LICENSE=WebPack
+USER_INFO=210656542_0_0_533

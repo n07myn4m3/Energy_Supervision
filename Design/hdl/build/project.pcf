@@ -1,0 +1,827 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Aug 10 13:18:30 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "scl" LOCATE = SITE "D14" LEVEL 1;
+COMP "sda" LOCATE = SITE "C17" LEVEL 1;
+COMP "sys_clk_i" LOCATE = SITE "E3" LEVEL 1;
+COMP "uart_tx" LOCATE = SITE "D4" LEVEL 1;
+COMP "gp_out0<3>" LOCATE = SITE "N14" LEVEL 1;
+COMP "gp_out0<4>" LOCATE = SITE "R18" LEVEL 1;
+COMP "gp_out0<1>" LOCATE = SITE "K15" LEVEL 1;
+COMP "gp_out0<2>" LOCATE = SITE "J13" LEVEL 1;
+COMP "gp_out0<0>" LOCATE = SITE "H17" LEVEL 1;
+COMP "gp_out0<7>" LOCATE = SITE "U16" LEVEL 1;
+COMP "gp_out0<5>" LOCATE = SITE "V17" LEVEL 1;
+COMP "gp_out0<6>" LOCATE = SITE "U17" LEVEL 1;
+COMP "gp_in0<3>" LOCATE = SITE "R17" LEVEL 1;
+COMP "gp_in0<4>" LOCATE = SITE "T18" LEVEL 1;
+COMP "gp_in0<1>" LOCATE = SITE "M13" LEVEL 1;
+COMP "gp_in0<2>" LOCATE = SITE "R15" LEVEL 1;
+COMP "gp_in0<0>" LOCATE = SITE "L16" LEVEL 1;
+COMP "gp_in0<7>" LOCATE = SITE "T8" LEVEL 1;
+COMP "gp_in0<5>" LOCATE = SITE "U18" LEVEL 1;
+COMP "gp_in0<6>" LOCATE = SITE "R13" LEVEL 1;
+COMP "sys_rst_i" LOCATE = SITE "J15" LEVEL 1;
+PIN cpu0/Mram_rstack_pins<32> = BEL "cpu0/Mram_rstack" PINNAME CLKARDCLK;
+PIN cpu0/ram0/Mram_ram1_pins<63> = BEL "cpu0/ram0/Mram_ram1" PINNAME
+        CLKARDCLKU;
+PIN cpu0/ram0/Mram_ram1_pins<62> = BEL "cpu0/ram0/Mram_ram1" PINNAME
+        CLKARDCLKL;
+PIN cpu0/ram0/Mram_ram1_pins<65> = BEL "cpu0/ram0/Mram_ram1" PINNAME
+        CLKBWRCLKU;
+PIN cpu0/ram0/Mram_ram1_pins<64> = BEL "cpu0/ram0/Mram_ram1" PINNAME
+        CLKBWRCLKL;
+PIN cpu0/ram0/Mram_ram2_pins<63> = BEL "cpu0/ram0/Mram_ram2" PINNAME
+        CLKARDCLKU;
+PIN cpu0/ram0/Mram_ram2_pins<62> = BEL "cpu0/ram0/Mram_ram2" PINNAME
+        CLKARDCLKL;
+PIN cpu0/ram0/Mram_ram2_pins<65> = BEL "cpu0/ram0/Mram_ram2" PINNAME
+        CLKBWRCLKU;
+PIN cpu0/ram0/Mram_ram2_pins<64> = BEL "cpu0/ram0/Mram_ram2" PINNAME
+        CLKBWRCLKL;
+PIN cpu0/ram0/Mram_ram3_pins<63> = BEL "cpu0/ram0/Mram_ram3" PINNAME
+        CLKARDCLKU;
+PIN cpu0/ram0/Mram_ram3_pins<62> = BEL "cpu0/ram0/Mram_ram3" PINNAME
+        CLKARDCLKL;
+PIN cpu0/ram0/Mram_ram3_pins<65> = BEL "cpu0/ram0/Mram_ram3" PINNAME
+        CLKBWRCLKU;
+PIN cpu0/ram0/Mram_ram3_pins<64> = BEL "cpu0/ram0/Mram_ram3" PINNAME
+        CLKBWRCLKL;
+PIN cpu0/ram0/Mram_ram4_pins<63> = BEL "cpu0/ram0/Mram_ram4" PINNAME
+        CLKARDCLKU;
+PIN cpu0/ram0/Mram_ram4_pins<62> = BEL "cpu0/ram0/Mram_ram4" PINNAME
+        CLKARDCLKL;
+PIN cpu0/ram0/Mram_ram4_pins<65> = BEL "cpu0/ram0/Mram_ram4" PINNAME
+        CLKBWRCLKU;
+PIN cpu0/ram0/Mram_ram4_pins<64> = BEL "cpu0/ram0/Mram_ram4" PINNAME
+        CLKBWRCLKL;
+TIMEGRP sys_clk_pin = BEL "cpu0/rsp_0" BEL "cpu0/rsp_1" BEL "cpu0/rsp_2" BEL
+        "cpu0/rsp_3" BEL "cpu0/rsp_4" BEL "cpu0/pc_0" BEL "cpu0/pc_1" BEL
+        "cpu0/pc_2" BEL "cpu0/pc_3" BEL "cpu0/pc_4" BEL "cpu0/pc_5" BEL
+        "cpu0/pc_6" BEL "cpu0/pc_7" BEL "cpu0/pc_8" BEL "cpu0/pc_9" BEL
+        "cpu0/pc_10" BEL "cpu0/pc_11" BEL "cpu0/pc_12" BEL "cpu0/dstack_31_0"
+        BEL "cpu0/dstack_31_1" BEL "cpu0/dstack_31_2" BEL "cpu0/dstack_31_3"
+        BEL "cpu0/dstack_31_4" BEL "cpu0/dstack_31_5" BEL "cpu0/dstack_31_6"
+        BEL "cpu0/dstack_31_7" BEL "cpu0/dstack_31_8" BEL "cpu0/dstack_31_9"
+        BEL "cpu0/dstack_31_10" BEL "cpu0/dstack_31_11" BEL
+        "cpu0/dstack_31_12" BEL "cpu0/dstack_31_13" BEL "cpu0/dstack_31_14"
+        BEL "cpu0/dstack_31_15" BEL "cpu0/dstack_31_16" BEL
+        "cpu0/dstack_31_17" BEL "cpu0/dstack_31_18" BEL "cpu0/dstack_31_19"
+        BEL "cpu0/dstack_31_20" BEL "cpu0/dstack_31_21" BEL
+        "cpu0/dstack_31_22" BEL "cpu0/dstack_31_23" BEL "cpu0/dstack_31_24"
+        BEL "cpu0/dstack_31_25" BEL "cpu0/dstack_31_26" BEL
+        "cpu0/dstack_31_27" BEL "cpu0/dstack_31_28" BEL "cpu0/dstack_31_29"
+        BEL "cpu0/dstack_31_30" BEL "cpu0/dstack_31_31" BEL
+        "cpu0/dstack_31_32" BEL "cpu0/dstack_31_33" BEL "cpu0/dstack_31_34"
+        BEL "cpu0/dstack_31_35" BEL "cpu0/dstack_31_36" BEL
+        "cpu0/dstack_31_37" BEL "cpu0/dstack_31_38" BEL "cpu0/dstack_31_39"
+        BEL "cpu0/dstack_31_40" BEL "cpu0/dstack_31_41" BEL
+        "cpu0/dstack_31_42" BEL "cpu0/dstack_31_43" BEL "cpu0/dstack_31_44"
+        BEL "cpu0/dstack_31_45" BEL "cpu0/dstack_31_46" BEL
+        "cpu0/dstack_31_47" BEL "cpu0/dstack_31_48" BEL "cpu0/dstack_31_49"
+        BEL "cpu0/dstack_31_50" BEL "cpu0/dstack_31_51" BEL
+        "cpu0/dstack_31_52" BEL "cpu0/dstack_31_53" BEL "cpu0/dstack_31_54"
+        BEL "cpu0/dstack_31_55" BEL "cpu0/dstack_31_56" BEL
+        "cpu0/dstack_31_57" BEL "cpu0/dstack_31_58" BEL "cpu0/dstack_31_59"
+        BEL "cpu0/dstack_31_60" BEL "cpu0/dstack_31_61" BEL
+        "cpu0/dstack_31_62" BEL "cpu0/dstack_31_63" BEL "cpu0/dstack_31_64"
+        BEL "cpu0/dstack_31_65" BEL "cpu0/dstack_31_66" BEL
+        "cpu0/dstack_31_67" BEL "cpu0/dstack_31_68" BEL "cpu0/dstack_31_69"
+        BEL "cpu0/dstack_31_70" BEL "cpu0/dstack_31_71" BEL
+        "cpu0/dstack_31_72" BEL "cpu0/dstack_31_73" BEL "cpu0/dstack_31_74"
+        BEL "cpu0/dstack_31_75" BEL "cpu0/dstack_31_76" BEL
+        "cpu0/dstack_31_77" BEL "cpu0/dstack_31_78" BEL "cpu0/dstack_31_79"
+        BEL "cpu0/dstack_31_80" BEL "cpu0/dstack_31_81" BEL
+        "cpu0/dstack_31_82" BEL "cpu0/dstack_31_83" BEL "cpu0/dstack_31_84"
+        BEL "cpu0/dstack_31_85" BEL "cpu0/dstack_31_86" BEL
+        "cpu0/dstack_31_87" BEL "cpu0/dstack_31_88" BEL "cpu0/dstack_31_89"
+        BEL "cpu0/dstack_31_90" BEL "cpu0/dstack_31_91" BEL
+        "cpu0/dstack_31_92" BEL "cpu0/dstack_31_93" BEL "cpu0/dstack_31_94"
+        BEL "cpu0/dstack_31_95" BEL "cpu0/dstack_31_96" BEL
+        "cpu0/dstack_31_97" BEL "cpu0/dstack_31_98" BEL "cpu0/dstack_31_99"
+        BEL "cpu0/dstack_31_100" BEL "cpu0/dstack_31_101" BEL
+        "cpu0/dstack_31_102" BEL "cpu0/dstack_31_103" BEL "cpu0/dstack_31_104"
+        BEL "cpu0/dstack_31_105" BEL "cpu0/dstack_31_106" BEL
+        "cpu0/dstack_31_107" BEL "cpu0/dstack_31_108" BEL "cpu0/dstack_31_109"
+        BEL "cpu0/dstack_31_110" BEL "cpu0/dstack_31_111" BEL
+        "cpu0/dstack_31_112" BEL "cpu0/dstack_31_113" BEL "cpu0/dstack_31_114"
+        BEL "cpu0/dstack_31_115" BEL "cpu0/dstack_31_116" BEL
+        "cpu0/dstack_31_117" BEL "cpu0/dstack_31_118" BEL "cpu0/dstack_31_119"
+        BEL "cpu0/dstack_31_120" BEL "cpu0/dstack_31_121" BEL
+        "cpu0/dstack_31_122" BEL "cpu0/dstack_31_123" BEL "cpu0/dstack_31_124"
+        BEL "cpu0/dstack_31_125" BEL "cpu0/dstack_31_126" BEL
+        "cpu0/dstack_31_127" BEL "cpu0/dstack_31_128" BEL "cpu0/dstack_31_129"
+        BEL "cpu0/dstack_31_130" BEL "cpu0/dstack_31_131" BEL
+        "cpu0/dstack_31_132" BEL "cpu0/dstack_31_133" BEL "cpu0/dstack_31_134"
+        BEL "cpu0/dstack_31_135" BEL "cpu0/dstack_31_136" BEL
+        "cpu0/dstack_31_137" BEL "cpu0/dstack_31_138" BEL "cpu0/dstack_31_139"
+        BEL "cpu0/dstack_31_140" BEL "cpu0/dstack_31_141" BEL
+        "cpu0/dstack_31_142" BEL "cpu0/dstack_31_143" BEL "cpu0/dstack_31_144"
+        BEL "cpu0/dstack_31_145" BEL "cpu0/dstack_31_146" BEL
+        "cpu0/dstack_31_147" BEL "cpu0/dstack_31_148" BEL "cpu0/dstack_31_149"
+        BEL "cpu0/dstack_31_150" BEL "cpu0/dstack_31_151" BEL
+        "cpu0/dstack_31_152" BEL "cpu0/dstack_31_153" BEL "cpu0/dstack_31_154"
+        BEL "cpu0/dstack_31_155" BEL "cpu0/dstack_31_156" BEL
+        "cpu0/dstack_31_157" BEL "cpu0/dstack_31_158" BEL "cpu0/dstack_31_159"
+        BEL "cpu0/dstack_31_160" BEL "cpu0/dstack_31_161" BEL
+        "cpu0/dstack_31_162" BEL "cpu0/dstack_31_163" BEL "cpu0/dstack_31_164"
+        BEL "cpu0/dstack_31_165" BEL "cpu0/dstack_31_166" BEL
+        "cpu0/dstack_31_167" BEL "cpu0/dstack_31_168" BEL "cpu0/dstack_31_169"
+        BEL "cpu0/dstack_31_170" BEL "cpu0/dstack_31_171" BEL
+        "cpu0/dstack_31_172" BEL "cpu0/dstack_31_173" BEL "cpu0/dstack_31_174"
+        BEL "cpu0/dstack_31_175" BEL "cpu0/dstack_31_176" BEL
+        "cpu0/dstack_31_177" BEL "cpu0/dstack_31_178" BEL "cpu0/dstack_31_179"
+        BEL "cpu0/dstack_31_180" BEL "cpu0/dstack_31_181" BEL
+        "cpu0/dstack_31_182" BEL "cpu0/dstack_31_183" BEL "cpu0/dstack_31_184"
+        BEL "cpu0/dstack_31_185" BEL "cpu0/dstack_31_186" BEL
+        "cpu0/dstack_31_187" BEL "cpu0/dstack_31_188" BEL "cpu0/dstack_31_189"
+        BEL "cpu0/dstack_31_190" BEL "cpu0/dstack_31_191" BEL
+        "cpu0/dstack_31_192" BEL "cpu0/dstack_31_193" BEL "cpu0/dstack_31_194"
+        BEL "cpu0/dstack_31_195" BEL "cpu0/dstack_31_196" BEL
+        "cpu0/dstack_31_197" BEL "cpu0/dstack_31_198" BEL "cpu0/dstack_31_199"
+        BEL "cpu0/dstack_31_200" BEL "cpu0/dstack_31_201" BEL
+        "cpu0/dstack_31_202" BEL "cpu0/dstack_31_203" BEL "cpu0/dstack_31_204"
+        BEL "cpu0/dstack_31_205" BEL "cpu0/dstack_31_206" BEL
+        "cpu0/dstack_31_207" BEL "cpu0/dstack_31_208" BEL "cpu0/dstack_31_209"
+        BEL "cpu0/dstack_31_210" BEL "cpu0/dstack_31_211" BEL
+        "cpu0/dstack_31_212" BEL "cpu0/dstack_31_213" BEL "cpu0/dstack_31_214"
+        BEL "cpu0/dstack_31_215" BEL "cpu0/dstack_31_216" BEL
+        "cpu0/dstack_31_217" BEL "cpu0/dstack_31_218" BEL "cpu0/dstack_31_219"
+        BEL "cpu0/dstack_31_220" BEL "cpu0/dstack_31_221" BEL
+        "cpu0/dstack_31_222" BEL "cpu0/dstack_31_223" BEL "cpu0/dstack_31_224"
+        BEL "cpu0/dstack_31_225" BEL "cpu0/dstack_31_226" BEL
+        "cpu0/dstack_31_227" BEL "cpu0/dstack_31_228" BEL "cpu0/dstack_31_229"
+        BEL "cpu0/dstack_31_230" BEL "cpu0/dstack_31_231" BEL
+        "cpu0/dstack_31_232" BEL "cpu0/dstack_31_233" BEL "cpu0/dstack_31_234"
+        BEL "cpu0/dstack_31_235" BEL "cpu0/dstack_31_236" BEL
+        "cpu0/dstack_31_237" BEL "cpu0/dstack_31_238" BEL "cpu0/dstack_31_239"
+        BEL "cpu0/dstack_31_240" BEL "cpu0/dstack_31_241" BEL
+        "cpu0/dstack_31_242" BEL "cpu0/dstack_31_243" BEL "cpu0/dstack_31_244"
+        BEL "cpu0/dstack_31_245" BEL "cpu0/dstack_31_246" BEL
+        "cpu0/dstack_31_247" BEL "cpu0/dstack_31_248" BEL "cpu0/dstack_31_249"
+        BEL "cpu0/dstack_31_250" BEL "cpu0/dstack_31_251" BEL
+        "cpu0/dstack_31_252" BEL "cpu0/dstack_31_253" BEL "cpu0/dstack_31_254"
+        BEL "cpu0/dstack_31_255" BEL "cpu0/dstack_31_256" BEL
+        "cpu0/dstack_31_257" BEL "cpu0/dstack_31_258" BEL "cpu0/dstack_31_259"
+        BEL "cpu0/dstack_31_260" BEL "cpu0/dstack_31_261" BEL
+        "cpu0/dstack_31_262" BEL "cpu0/dstack_31_263" BEL "cpu0/dstack_31_264"
+        BEL "cpu0/dstack_31_265" BEL "cpu0/dstack_31_266" BEL
+        "cpu0/dstack_31_267" BEL "cpu0/dstack_31_268" BEL "cpu0/dstack_31_269"
+        BEL "cpu0/dstack_31_270" BEL "cpu0/dstack_31_271" BEL
+        "cpu0/dstack_31_272" BEL "cpu0/dstack_31_273" BEL "cpu0/dstack_31_274"
+        BEL "cpu0/dstack_31_275" BEL "cpu0/dstack_31_276" BEL
+        "cpu0/dstack_31_277" BEL "cpu0/dstack_31_278" BEL "cpu0/dstack_31_279"
+        BEL "cpu0/dstack_31_280" BEL "cpu0/dstack_31_281" BEL
+        "cpu0/dstack_31_282" BEL "cpu0/dstack_31_283" BEL "cpu0/dstack_31_284"
+        BEL "cpu0/dstack_31_285" BEL "cpu0/dstack_31_286" BEL
+        "cpu0/dstack_31_287" BEL "cpu0/dstack_31_288" BEL "cpu0/dstack_31_289"
+        BEL "cpu0/dstack_31_290" BEL "cpu0/dstack_31_291" BEL
+        "cpu0/dstack_31_292" BEL "cpu0/dstack_31_293" BEL "cpu0/dstack_31_294"
+        BEL "cpu0/dstack_31_295" BEL "cpu0/dstack_31_296" BEL
+        "cpu0/dstack_31_297" BEL "cpu0/dstack_31_298" BEL "cpu0/dstack_31_299"
+        BEL "cpu0/dstack_31_300" BEL "cpu0/dstack_31_301" BEL
+        "cpu0/dstack_31_302" BEL "cpu0/dstack_31_303" BEL "cpu0/dstack_31_304"
+        BEL "cpu0/dstack_31_305" BEL "cpu0/dstack_31_306" BEL
+        "cpu0/dstack_31_307" BEL "cpu0/dstack_31_308" BEL "cpu0/dstack_31_309"
+        BEL "cpu0/dstack_31_310" BEL "cpu0/dstack_31_311" BEL
+        "cpu0/dstack_31_312" BEL "cpu0/dstack_31_313" BEL "cpu0/dstack_31_314"
+        BEL "cpu0/dstack_31_315" BEL "cpu0/dstack_31_316" BEL
+        "cpu0/dstack_31_317" BEL "cpu0/dstack_31_318" BEL "cpu0/dstack_31_319"
+        BEL "cpu0/dstack_31_320" BEL "cpu0/dstack_31_321" BEL
+        "cpu0/dstack_31_322" BEL "cpu0/dstack_31_323" BEL "cpu0/dstack_31_324"
+        BEL "cpu0/dstack_31_325" BEL "cpu0/dstack_31_326" BEL
+        "cpu0/dstack_31_327" BEL "cpu0/dstack_31_328" BEL "cpu0/dstack_31_329"
+        BEL "cpu0/dstack_31_330" BEL "cpu0/dstack_31_331" BEL
+        "cpu0/dstack_31_332" BEL "cpu0/dstack_31_333" BEL "cpu0/dstack_31_334"
+        BEL "cpu0/dstack_31_335" BEL "cpu0/dstack_31_336" BEL
+        "cpu0/dstack_31_337" BEL "cpu0/dstack_31_338" BEL "cpu0/dstack_31_339"
+        BEL "cpu0/dstack_31_340" BEL "cpu0/dstack_31_341" BEL
+        "cpu0/dstack_31_342" BEL "cpu0/dstack_31_343" BEL "cpu0/dstack_31_344"
+        BEL "cpu0/dstack_31_345" BEL "cpu0/dstack_31_346" BEL
+        "cpu0/dstack_31_347" BEL "cpu0/dstack_31_348" BEL "cpu0/dstack_31_349"
+        BEL "cpu0/dstack_31_350" BEL "cpu0/dstack_31_351" BEL
+        "cpu0/dstack_31_352" BEL "cpu0/dstack_31_353" BEL "cpu0/dstack_31_354"
+        BEL "cpu0/dstack_31_355" BEL "cpu0/dstack_31_356" BEL
+        "cpu0/dstack_31_357" BEL "cpu0/dstack_31_358" BEL "cpu0/dstack_31_359"
+        BEL "cpu0/dstack_31_360" BEL "cpu0/dstack_31_361" BEL
+        "cpu0/dstack_31_362" BEL "cpu0/dstack_31_363" BEL "cpu0/dstack_31_364"
+        BEL "cpu0/dstack_31_365" BEL "cpu0/dstack_31_366" BEL
+        "cpu0/dstack_31_367" BEL "cpu0/dstack_31_368" BEL "cpu0/dstack_31_369"
+        BEL "cpu0/dstack_31_370" BEL "cpu0/dstack_31_371" BEL
+        "cpu0/dstack_31_372" BEL "cpu0/dstack_31_373" BEL "cpu0/dstack_31_374"
+        BEL "cpu0/dstack_31_375" BEL "cpu0/dstack_31_376" BEL
+        "cpu0/dstack_31_377" BEL "cpu0/dstack_31_378" BEL "cpu0/dstack_31_379"
+        BEL "cpu0/dstack_31_380" BEL "cpu0/dstack_31_381" BEL
+        "cpu0/dstack_31_382" BEL "cpu0/dstack_31_383" BEL "cpu0/dstack_31_384"
+        BEL "cpu0/dstack_31_385" BEL "cpu0/dstack_31_386" BEL
+        "cpu0/dstack_31_387" BEL "cpu0/dstack_31_388" BEL "cpu0/dstack_31_389"
+        BEL "cpu0/dstack_31_390" BEL "cpu0/dstack_31_391" BEL
+        "cpu0/dstack_31_392" BEL "cpu0/dstack_31_393" BEL "cpu0/dstack_31_394"
+        BEL "cpu0/dstack_31_395" BEL "cpu0/dstack_31_396" BEL
+        "cpu0/dstack_31_397" BEL "cpu0/dstack_31_398" BEL "cpu0/dstack_31_399"
+        BEL "cpu0/dstack_31_400" BEL "cpu0/dstack_31_401" BEL
+        "cpu0/dstack_31_402" BEL "cpu0/dstack_31_403" BEL "cpu0/dstack_31_404"
+        BEL "cpu0/dstack_31_405" BEL "cpu0/dstack_31_406" BEL
+        "cpu0/dstack_31_407" BEL "cpu0/dstack_31_408" BEL "cpu0/dstack_31_409"
+        BEL "cpu0/dstack_31_410" BEL "cpu0/dstack_31_411" BEL
+        "cpu0/dstack_31_412" BEL "cpu0/dstack_31_413" BEL "cpu0/dstack_31_414"
+        BEL "cpu0/dstack_31_415" BEL "cpu0/dstack_31_416" BEL
+        "cpu0/dstack_31_417" BEL "cpu0/dstack_31_418" BEL "cpu0/dstack_31_419"
+        BEL "cpu0/dstack_31_420" BEL "cpu0/dstack_31_421" BEL
+        "cpu0/dstack_31_422" BEL "cpu0/dstack_31_423" BEL "cpu0/dstack_31_424"
+        BEL "cpu0/dstack_31_425" BEL "cpu0/dstack_31_426" BEL
+        "cpu0/dstack_31_427" BEL "cpu0/dstack_31_428" BEL "cpu0/dstack_31_429"
+        BEL "cpu0/dstack_31_430" BEL "cpu0/dstack_31_431" BEL
+        "cpu0/dstack_31_432" BEL "cpu0/dstack_31_433" BEL "cpu0/dstack_31_434"
+        BEL "cpu0/dstack_31_435" BEL "cpu0/dstack_31_436" BEL
+        "cpu0/dstack_31_437" BEL "cpu0/dstack_31_438" BEL "cpu0/dstack_31_439"
+        BEL "cpu0/dstack_31_440" BEL "cpu0/dstack_31_441" BEL
+        "cpu0/dstack_31_442" BEL "cpu0/dstack_31_443" BEL "cpu0/dstack_31_444"
+        BEL "cpu0/dstack_31_445" BEL "cpu0/dstack_31_446" BEL
+        "cpu0/dstack_31_447" BEL "cpu0/dstack_31_448" BEL "cpu0/dstack_31_449"
+        BEL "cpu0/dstack_31_450" BEL "cpu0/dstack_31_451" BEL
+        "cpu0/dstack_31_452" BEL "cpu0/dstack_31_453" BEL "cpu0/dstack_31_454"
+        BEL "cpu0/dstack_31_455" BEL "cpu0/dstack_31_456" BEL
+        "cpu0/dstack_31_457" BEL "cpu0/dstack_31_458" BEL "cpu0/dstack_31_459"
+        BEL "cpu0/dstack_31_460" BEL "cpu0/dstack_31_461" BEL
+        "cpu0/dstack_31_462" BEL "cpu0/dstack_31_463" BEL "cpu0/dstack_31_464"
+        BEL "cpu0/dstack_31_465" BEL "cpu0/dstack_31_466" BEL
+        "cpu0/dstack_31_467" BEL "cpu0/dstack_31_468" BEL "cpu0/dstack_31_469"
+        BEL "cpu0/dstack_31_470" BEL "cpu0/dstack_31_471" BEL
+        "cpu0/dstack_31_472" BEL "cpu0/dstack_31_473" BEL "cpu0/dstack_31_474"
+        BEL "cpu0/dstack_31_475" BEL "cpu0/dstack_31_476" BEL
+        "cpu0/dstack_31_477" BEL "cpu0/dstack_31_478" BEL "cpu0/dstack_31_479"
+        BEL "cpu0/dstack_31_480" BEL "cpu0/dstack_31_481" BEL
+        "cpu0/dstack_31_482" BEL "cpu0/dstack_31_483" BEL "cpu0/dstack_31_484"
+        BEL "cpu0/dstack_31_485" BEL "cpu0/dstack_31_486" BEL
+        "cpu0/dstack_31_487" BEL "cpu0/dstack_31_488" BEL "cpu0/dstack_31_489"
+        BEL "cpu0/dstack_31_490" BEL "cpu0/dstack_31_491" BEL
+        "cpu0/dstack_31_492" BEL "cpu0/dstack_31_493" BEL "cpu0/dstack_31_494"
+        BEL "cpu0/dstack_31_495" BEL "cpu0/dstack_31_496" BEL
+        "cpu0/dstack_31_497" BEL "cpu0/dstack_31_498" BEL "cpu0/dstack_31_499"
+        BEL "cpu0/dstack_31_500" BEL "cpu0/dstack_31_501" BEL
+        "cpu0/dstack_31_502" BEL "cpu0/dstack_31_503" BEL "cpu0/dstack_31_504"
+        BEL "cpu0/dstack_31_505" BEL "cpu0/dstack_31_506" BEL
+        "cpu0/dstack_31_507" BEL "cpu0/dstack_31_508" BEL "cpu0/dstack_31_509"
+        BEL "cpu0/dstack_31_510" BEL "cpu0/dstack_31_511" BEL "cpu0/st0_0" BEL
+        "cpu0/st0_1" BEL "cpu0/st0_2" BEL "cpu0/st0_3" BEL "cpu0/st0_4" BEL
+        "cpu0/st0_5" BEL "cpu0/st0_6" BEL "cpu0/st0_7" BEL "cpu0/st0_8" BEL
+        "cpu0/st0_9" BEL "cpu0/st0_10" BEL "cpu0/st0_11" BEL "cpu0/st0_12" BEL
+        "cpu0/st0_13" BEL "cpu0/st0_14" BEL "cpu0/st0_15" BEL
+        "dpRm/dlptRAM/d_out_0" BEL "dpRm/dlptRAM/d_out_1" BEL
+        "dpRm/dlptRAM/d_out_2" BEL "dpRm/dlptRAM/d_out_3" BEL
+        "dpRm/dlptRAM/d_out_4" BEL "dpRm/dlptRAM/d_out_5" BEL
+        "dpRm/dlptRAM/d_out_6" BEL "dpRm/dlptRAM/d_out_7" BEL
+        "dpRm/dlptRAM/d_out_8" BEL "dpRm/dlptRAM/d_out_9" BEL
+        "dpRm/dlptRAM/d_out_10" BEL "dpRm/dlptRAM/d_out_11" BEL
+        "dpRm/dlptRAM/d_out_12" BEL "dpRm/dlptRAM/d_out_13" BEL
+        "dpRm/dlptRAM/d_out_14" BEL "dpRm/dlptRAM/d_out_15" BEL
+        "per_timmer/timmeruut/Q_0" BEL "per_timmer/timmeruut/Q_1" BEL
+        "per_timmer/timmeruut/Q_2" BEL "per_timmer/timmeruut/Q_3" BEL
+        "per_timmer/timmeruut/Q_4" BEL "per_timmer/timmeruut/Q_5" BEL
+        "per_timmer/timmeruut/Q_6" BEL "per_timmer/timmeruut/Q_7" BEL
+        "per_timmer/timmeruut/Q_8" BEL "per_timmer/timmeruut/Q_9" BEL
+        "per_timmer/timmeruut/Q_10" BEL "per_timmer/timmeruut/Q_11" BEL
+        "per_timmer/timmeruut/Q_12" BEL "per_timmer/timmeruut/Q_13" BEL
+        "per_timmer/timmeruut/Q_14" BEL "per_timmer/timmeruut/Q_15" BEL
+        "per_timmer/timmeruut/Q_16" BEL "per_timmer/timmeruut/Q_17" BEL
+        "per_timmer/timmeruut/Q_18" BEL "per_timmer/timmeruut/Q_19" BEL
+        "per_timmer/timmeruut/Q_20" BEL "per_timmer/timmeruut/Q_21" BEL
+        "per_timmer/timmeruut/Q_22" BEL "per_timmer/timmeruut/Q_23" BEL
+        "per_timmer/timmeruut/Q_24" BEL "per_timmer/timmeruut/Q_25" BEL
+        "per_timmer/timmeruut/Q_26" BEL "cpu0/dsp_0" BEL "cpu0/dsp_1" BEL
+        "cpu0/dsp_2" BEL "cpu0/dsp_3" BEL "cpu0/dsp_4" BEL "per_i2c/data_wr_7"
+        BEL "per_i2c/data_wr_6" BEL "per_i2c/data_wr_5" BEL
+        "per_i2c/data_wr_4" BEL "per_i2c/data_wr_3" BEL "per_i2c/data_wr_2"
+        BEL "per_i2c/data_wr_1" BEL "per_i2c/data_wr_0" BEL "per_i2c/d_out_7"
+        BEL "per_i2c/d_out_6" BEL "per_i2c/d_out_5" BEL "per_i2c/d_out_4" BEL
+        "per_i2c/d_out_3" BEL "per_i2c/d_out_2" BEL "per_i2c/d_out_1" BEL
+        "per_i2c/d_out_0" BEL "per_i2c/add_r_6" BEL "per_i2c/add_r_5" BEL
+        "per_i2c/add_r_4" BEL "per_i2c/add_r_3" BEL "per_i2c/add_r_2" BEL
+        "per_i2c/add_r_1" BEL "per_i2c/add_r_0" BEL
+        "per_i2c/i2cuut/state_FSM_FFd1" BEL "per_i2c/i2cuut/state_FSM_FFd2"
+        BEL "per_i2c/i2cuut/state_FSM_FFd4" BEL "per_i2c/i2cuut/count_9" BEL
+        "per_i2c/i2cuut/count_8" BEL "per_i2c/i2cuut/count_7" BEL
+        "per_i2c/i2cuut/count_6" BEL "per_i2c/i2cuut/count_5" BEL
+        "per_i2c/i2cuut/count_4" BEL "per_i2c/i2cuut/count_3" BEL
+        "per_i2c/i2cuut/count_2" BEL "per_i2c/i2cuut/count_1" BEL
+        "per_i2c/i2cuut/count_0" BEL "per_i2c/i2cuut/state_FSM_FFd3" BEL
+        "per_i2c/i2cuut/data_rd_7" BEL "per_i2c/i2cuut/data_rd_6" BEL
+        "per_i2c/i2cuut/data_rd_5" BEL "per_i2c/i2cuut/data_rd_4" BEL
+        "per_i2c/i2cuut/data_rd_3" BEL "per_i2c/i2cuut/data_rd_2" BEL
+        "per_i2c/i2cuut/data_rd_1" BEL "per_i2c/i2cuut/data_rd_0" BEL
+        "per_i2c/i2cuut/data_rx_7" BEL "per_i2c/i2cuut/data_rx_6" BEL
+        "per_i2c/i2cuut/data_rx_5" BEL "per_i2c/i2cuut/data_rx_4" BEL
+        "per_i2c/i2cuut/data_rx_3" BEL "per_i2c/i2cuut/data_rx_2" BEL
+        "per_i2c/i2cuut/data_rx_1" BEL "per_i2c/i2cuut/data_rx_0" BEL
+        "per_i2c/i2cuut/bit_cnt_2" BEL "per_i2c/i2cuut/bit_cnt_1" BEL
+        "per_i2c/i2cuut/bit_cnt_0" BEL "per_i2c/i2cuut/addr_rw_7" BEL
+        "per_i2c/i2cuut/addr_rw_6" BEL "per_i2c/i2cuut/addr_rw_5" BEL
+        "per_i2c/i2cuut/addr_rw_4" BEL "per_i2c/i2cuut/addr_rw_3" BEL
+        "per_i2c/i2cuut/addr_rw_2" BEL "per_i2c/i2cuut/addr_rw_1" BEL
+        "per_i2c/i2cuut/addr_rw_0" BEL "per_i2c/i2cuut/ack_error" BEL
+        "per_i2c/i2cuut/scl_ena" BEL "per_i2c/i2cuut/data_tx_7" BEL
+        "per_i2c/i2cuut/data_tx_6" BEL "per_i2c/i2cuut/data_tx_5" BEL
+        "per_i2c/i2cuut/data_tx_4" BEL "per_i2c/i2cuut/data_tx_3" BEL
+        "per_i2c/i2cuut/data_tx_2" BEL "per_i2c/i2cuut/data_tx_1" BEL
+        "per_i2c/i2cuut/data_tx_0" BEL "gpin1/d_out_15" BEL "gpin1/d_out_14"
+        BEL "gpin1/d_out_13" BEL "gpin1/d_out_12" BEL "gpin1/d_out_11" BEL
+        "gpin1/d_out_10" BEL "gpin1/d_out_9" BEL "gpin1/d_out_8" BEL
+        "gpin1/d_out_7" BEL "gpin1/d_out_6" BEL "gpin1/d_out_5" BEL
+        "gpin1/d_out_4" BEL "gpin1/d_out_3" BEL "gpin1/d_out_2" BEL
+        "gpin1/d_out_1" BEL "gpin1/d_out_0" BEL "per_m/mt_32/acc0/pp_31" BEL
+        "per_m/mt_32/acc0/pp_30" BEL "per_m/mt_32/acc0/pp_29" BEL
+        "per_m/mt_32/acc0/pp_28" BEL "per_m/mt_32/acc0/pp_27" BEL
+        "per_m/mt_32/acc0/pp_26" BEL "per_m/mt_32/acc0/pp_25" BEL
+        "per_m/mt_32/acc0/pp_24" BEL "per_m/mt_32/acc0/pp_23" BEL
+        "per_m/mt_32/acc0/pp_22" BEL "per_m/mt_32/acc0/pp_21" BEL
+        "per_m/mt_32/acc0/pp_20" BEL "per_m/mt_32/acc0/pp_19" BEL
+        "per_m/mt_32/acc0/pp_18" BEL "per_m/mt_32/acc0/pp_17" BEL
+        "per_m/mt_32/acc0/pp_16" BEL "per_m/mt_32/acc0/pp_15" BEL
+        "per_m/mt_32/acc0/pp_14" BEL "per_m/mt_32/acc0/pp_13" BEL
+        "per_m/mt_32/acc0/pp_12" BEL "per_m/mt_32/acc0/pp_11" BEL
+        "per_m/mt_32/acc0/pp_10" BEL "per_m/mt_32/acc0/pp_9" BEL
+        "per_m/mt_32/acc0/pp_8" BEL "per_m/mt_32/acc0/pp_7" BEL
+        "per_m/mt_32/acc0/pp_6" BEL "per_m/mt_32/acc0/pp_5" BEL
+        "per_m/mt_32/acc0/pp_4" BEL "per_m/mt_32/acc0/pp_3" BEL
+        "per_m/mt_32/acc0/pp_2" BEL "per_m/mt_32/acc0/pp_1" BEL
+        "per_m/mt_32/acc0/pp_0" BEL "per_m/init" BEL "per_m/A_15" BEL
+        "per_m/A_14" BEL "per_m/A_13" BEL "per_m/A_12" BEL "per_m/A_11" BEL
+        "per_m/A_10" BEL "per_m/A_9" BEL "per_m/A_8" BEL "per_m/A_7" BEL
+        "per_m/A_6" BEL "per_m/A_5" BEL "per_m/A_4" BEL "per_m/A_3" BEL
+        "per_m/A_2" BEL "per_m/A_1" BEL "per_m/A_0" BEL "per_m/B_15" BEL
+        "per_m/B_14" BEL "per_m/B_13" BEL "per_m/B_12" BEL "per_m/B_11" BEL
+        "per_m/B_10" BEL "per_m/B_9" BEL "per_m/B_8" BEL "per_m/B_7" BEL
+        "per_m/B_6" BEL "per_m/B_5" BEL "per_m/B_4" BEL "per_m/B_3" BEL
+        "per_m/B_2" BEL "per_m/B_1" BEL "per_m/B_0" BEL "per_m/d_out_15" BEL
+        "per_m/d_out_14" BEL "per_m/d_out_13" BEL "per_m/d_out_12" BEL
+        "per_m/d_out_11" BEL "per_m/d_out_10" BEL "per_m/d_out_9" BEL
+        "per_m/d_out_8" BEL "per_m/d_out_7" BEL "per_m/d_out_6" BEL
+        "per_m/d_out_5" BEL "per_m/d_out_4" BEL "per_m/d_out_3" BEL
+        "per_m/d_out_2" BEL "per_m/d_out_1" BEL "per_m/d_out_0" BEL
+        "per_m/mt_32/lsr0/s_A_31" BEL "per_m/mt_32/lsr0/s_A_30" BEL
+        "per_m/mt_32/lsr0/s_A_29" BEL "per_m/mt_32/lsr0/s_A_28" BEL
+        "per_m/mt_32/lsr0/s_A_27" BEL "per_m/mt_32/lsr0/s_A_26" BEL
+        "per_m/mt_32/lsr0/s_A_25" BEL "per_m/mt_32/lsr0/s_A_24" BEL
+        "per_m/mt_32/lsr0/s_A_23" BEL "per_m/mt_32/lsr0/s_A_22" BEL
+        "per_m/mt_32/lsr0/s_A_21" BEL "per_m/mt_32/lsr0/s_A_20" BEL
+        "per_m/mt_32/lsr0/s_A_19" BEL "per_m/mt_32/lsr0/s_A_18" BEL
+        "per_m/mt_32/lsr0/s_A_17" BEL "per_m/mt_32/lsr0/s_A_16" BEL
+        "per_m/mt_32/lsr0/s_A_15" BEL "per_m/mt_32/lsr0/s_A_14" BEL
+        "per_m/mt_32/lsr0/s_A_13" BEL "per_m/mt_32/lsr0/s_A_12" BEL
+        "per_m/mt_32/lsr0/s_A_11" BEL "per_m/mt_32/lsr0/s_A_10" BEL
+        "per_m/mt_32/lsr0/s_A_9" BEL "per_m/mt_32/lsr0/s_A_8" BEL
+        "per_m/mt_32/lsr0/s_A_7" BEL "per_m/mt_32/lsr0/s_A_6" BEL
+        "per_m/mt_32/lsr0/s_A_5" BEL "per_m/mt_32/lsr0/s_A_4" BEL
+        "per_m/mt_32/lsr0/s_A_3" BEL "per_m/mt_32/lsr0/s_A_2" BEL
+        "per_m/mt_32/lsr0/s_A_1" BEL "per_m/mt_32/lsr0/s_A_0" BEL
+        "per_m/mt_32/rsr0/s_B_15" BEL "per_m/mt_32/rsr0/s_B_14" BEL
+        "per_m/mt_32/rsr0/s_B_13" BEL "per_m/mt_32/rsr0/s_B_12" BEL
+        "per_m/mt_32/rsr0/s_B_11" BEL "per_m/mt_32/rsr0/s_B_10" BEL
+        "per_m/mt_32/rsr0/s_B_9" BEL "per_m/mt_32/rsr0/s_B_8" BEL
+        "per_m/mt_32/rsr0/s_B_7" BEL "per_m/mt_32/rsr0/s_B_6" BEL
+        "per_m/mt_32/rsr0/s_B_5" BEL "per_m/mt_32/rsr0/s_B_4" BEL
+        "per_m/mt_32/rsr0/s_B_3" BEL "per_m/mt_32/rsr0/s_B_2" BEL
+        "per_m/mt_32/rsr0/s_B_1" BEL "per_m/mt_32/rsr0/s_B_0" BEL
+        "per_m/mt_32/control0/state_FSM_FFd2" BEL
+        "per_m/mt_32/control0/state_FSM_FFd3" BEL
+        "per_m/mt_32/control0/state_FSM_FFd1" BEL
+        "per_m/mt_32/control0/count_3" BEL "per_m/mt_32/control0/count_2" BEL
+        "per_m/mt_32/control0/count_1" BEL "per_m/mt_32/control0/count_0" BEL
+        "per_d/init" BEL "per_d/A_15" BEL "per_d/A_14" BEL "per_d/A_13" BEL
+        "per_d/A_12" BEL "per_d/A_11" BEL "per_d/A_10" BEL "per_d/A_9" BEL
+        "per_d/A_8" BEL "per_d/A_7" BEL "per_d/A_6" BEL "per_d/A_5" BEL
+        "per_d/A_4" BEL "per_d/A_3" BEL "per_d/A_2" BEL "per_d/A_1" BEL
+        "per_d/A_0" BEL "per_d/B_15" BEL "per_d/B_14" BEL "per_d/B_13" BEL
+        "per_d/B_12" BEL "per_d/B_11" BEL "per_d/B_10" BEL "per_d/B_9" BEL
+        "per_d/B_8" BEL "per_d/B_7" BEL "per_d/B_6" BEL "per_d/B_5" BEL
+        "per_d/B_4" BEL "per_d/B_3" BEL "per_d/B_2" BEL "per_d/B_1" BEL
+        "per_d/B_0" BEL "per_d/d_out_15" BEL "per_d/d_out_14" BEL
+        "per_d/d_out_13" BEL "per_d/d_out_12" BEL "per_d/d_out_11" BEL
+        "per_d/d_out_10" BEL "per_d/d_out_9" BEL "per_d/d_out_8" BEL
+        "per_d/d_out_7" BEL "per_d/d_out_6" BEL "per_d/d_out_5" BEL
+        "per_d/d_out_4" BEL "per_d/d_out_3" BEL "per_d/d_out_2" BEL
+        "per_d/d_out_1" BEL "per_d/d_out_0" BEL "per_d/d_16/lsr_d/A_15" BEL
+        "per_d/d_16/lsr_d/A_14" BEL "per_d/d_16/lsr_d/A_13" BEL
+        "per_d/d_16/lsr_d/A_12" BEL "per_d/d_16/lsr_d/A_11" BEL
+        "per_d/d_16/lsr_d/A_10" BEL "per_d/d_16/lsr_d/A_9" BEL
+        "per_d/d_16/lsr_d/A_8" BEL "per_d/d_16/lsr_d/A_7" BEL
+        "per_d/d_16/lsr_d/A_6" BEL "per_d/d_16/lsr_d/A_5" BEL
+        "per_d/d_16/lsr_d/A_4" BEL "per_d/d_16/lsr_d/A_3" BEL
+        "per_d/d_16/lsr_d/A_2" BEL "per_d/d_16/lsr_d/A_1" BEL
+        "per_d/d_16/lsr_d/A_0" BEL "per_d/d_16/lsr_d/DV_15" BEL
+        "per_d/d_16/lsr_d/DV_14" BEL "per_d/d_16/lsr_d/DV_13" BEL
+        "per_d/d_16/lsr_d/DV_12" BEL "per_d/d_16/lsr_d/DV_11" BEL
+        "per_d/d_16/lsr_d/DV_10" BEL "per_d/d_16/lsr_d/DV_9" BEL
+        "per_d/d_16/lsr_d/DV_8" BEL "per_d/d_16/lsr_d/DV_7" BEL
+        "per_d/d_16/lsr_d/DV_6" BEL "per_d/d_16/lsr_d/DV_5" BEL
+        "per_d/d_16/lsr_d/DV_4" BEL "per_d/d_16/lsr_d/DV_3" BEL
+        "per_d/d_16/lsr_d/DV_2" BEL "per_d/d_16/lsr_d/DV_1" BEL
+        "per_d/d_16/lsr_d/DV_0" BEL "per_d/d_16/sb/Result_15" BEL
+        "per_d/d_16/sb/Result_14" BEL "per_d/d_16/sb/Result_13" BEL
+        "per_d/d_16/sb/Result_12" BEL "per_d/d_16/sb/Result_11" BEL
+        "per_d/d_16/sb/Result_10" BEL "per_d/d_16/sb/Result_9" BEL
+        "per_d/d_16/sb/Result_8" BEL "per_d/d_16/sb/Result_7" BEL
+        "per_d/d_16/sb/Result_6" BEL "per_d/d_16/sb/Result_5" BEL
+        "per_d/d_16/sb/Result_4" BEL "per_d/d_16/sb/Result_3" BEL
+        "per_d/d_16/sb/Result_2" BEL "per_d/d_16/sb/Result_1" BEL
+        "per_d/d_16/sb/Result_0" BEL "per_d/d_16/ctr_dv/cont_4" BEL
+        "per_d/d_16/ctr_dv/cont_3" BEL "per_d/d_16/ctr_dv/cont_2" BEL
+        "per_d/d_16/ctr_dv/cont_1" BEL "per_d/d_16/ctr_dv/cont_0" BEL
+        "per_d/d_16/ctl_dv/state_FSM_FFd2" BEL
+        "per_d/d_16/ctl_dv/state_FSM_FFd3" BEL
+        "per_d/d_16/ctl_dv/state_FSM_FFd1" BEL "per_d/d_16/ctl_dv/count_3" BEL
+        "per_d/d_16/ctl_dv/count_2" BEL "per_d/d_16/ctl_dv/count_1" BEL
+        "per_d/d_16/ctl_dv/count_0" BEL "per_d/d_16/fr/Result_15" BEL
+        "per_d/d_16/fr/Result_14" BEL "per_d/d_16/fr/Result_13" BEL
+        "per_d/d_16/fr/Result_12" BEL "per_d/d_16/fr/Result_11" BEL
+        "per_d/d_16/fr/Result_10" BEL "per_d/d_16/fr/Result_9" BEL
+        "per_d/d_16/fr/Result_8" BEL "per_d/d_16/fr/Result_7" BEL
+        "per_d/d_16/fr/Result_6" BEL "per_d/d_16/fr/Result_5" BEL
+        "per_d/d_16/fr/Result_4" BEL "per_d/d_16/fr/Result_3" BEL
+        "per_d/d_16/fr/Result_2" BEL "per_d/d_16/fr/Result_1" BEL
+        "per_d/d_16/fr/Result_0" BEL "per_u/d_out_0" BEL "per_u/d_in_uart_7"
+        BEL "per_u/d_in_uart_6" BEL "per_u/d_in_uart_5" BEL
+        "per_u/d_in_uart_4" BEL "per_u/d_in_uart_3" BEL "per_u/d_in_uart_2"
+        BEL "per_u/d_in_uart_1" BEL "per_u/d_in_uart_0" BEL "per_u/uart/d_28"
+        BEL "per_u/uart/d_26" BEL "per_u/uart/d_25" BEL "per_u/uart/d_24" BEL
+        "per_u/uart/d_23" BEL "per_u/uart/d_22" BEL "per_u/uart/d_21" BEL
+        "per_u/uart/d_20" BEL "per_u/uart/d_19" BEL "per_u/uart/d_18" BEL
+        "per_u/uart/d_17" BEL "per_u/uart/d_16" BEL "per_u/uart/d_15" BEL
+        "per_u/uart/d_14" BEL "per_u/uart/d_13" BEL "per_u/uart/d_12" BEL
+        "per_u/uart/d_11" BEL "per_u/uart/d_10" BEL "per_u/uart/d_9" BEL
+        "per_u/uart/d_8" BEL "per_u/uart/bitcount_3" BEL
+        "per_u/uart/bitcount_2" BEL "per_u/uart/bitcount_1" BEL
+        "per_u/uart/bitcount_0" BEL "per_u/uart/shifter_8" BEL
+        "per_u/uart/shifter_7" BEL "per_u/uart/shifter_6" BEL
+        "per_u/uart/shifter_5" BEL "per_u/uart/shifter_4" BEL
+        "per_u/uart/shifter_3" BEL "per_u/uart/shifter_2" BEL
+        "per_u/uart/shifter_1" BEL "per_u/uart/shifter_0" BEL
+        "gpout1/gp_out0_15" BEL "gpout1/gp_out0_14" BEL "gpout1/gp_out0_13"
+        BEL "gpout1/gp_out0_12" BEL "gpout1/gp_out0_11" BEL
+        "gpout1/gp_out0_10" BEL "gpout1/gp_out0_9" BEL "gpout1/gp_out0_8" BEL
+        "gpout1/gp_out0_7" BEL "gpout1/gp_out0_6" BEL "gpout1/gp_out0_5" BEL
+        "gpout1/gp_out0_4" BEL "gpout1/gp_out0_3" BEL "gpout1/gp_out0_2" BEL
+        "gpout1/gp_out0_1" BEL "gpout1/gp_out0_0" BEL "gpout1/gp_out1_15" BEL
+        "gpout1/gp_out1_14" BEL "gpout1/gp_out1_13" BEL "gpout1/gp_out1_12"
+        BEL "gpout1/gp_out1_11" BEL "gpout1/gp_out1_10" BEL "gpout1/gp_out1_9"
+        BEL "gpout1/gp_out1_8" BEL "gpout1/gp_out1_7" BEL "gpout1/gp_out1_6"
+        BEL "gpout1/gp_out1_5" BEL "gpout1/gp_out1_4" BEL "gpout1/gp_out1_3"
+        BEL "gpout1/gp_out1_2" BEL "gpout1/gp_out1_1" BEL "gpout1/gp_out1_0"
+        BEL "per_bin2bcd/data_13" BEL "per_bin2bcd/data_12" BEL
+        "per_bin2bcd/data_11" BEL "per_bin2bcd/data_10" BEL
+        "per_bin2bcd/data_9" BEL "per_bin2bcd/data_8" BEL "per_bin2bcd/data_7"
+        BEL "per_bin2bcd/data_6" BEL "per_bin2bcd/data_5" BEL
+        "per_bin2bcd/data_4" BEL "per_bin2bcd/data_3" BEL "per_bin2bcd/data_2"
+        BEL "per_bin2bcd/data_1" BEL "per_bin2bcd/data_0" BEL
+        "per_bin2bcd/d_out_3" BEL "per_bin2bcd/d_out_2" BEL
+        "per_bin2bcd/d_out_1" BEL "per_bin2bcd/d_out_0" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_29" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_28" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_27" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_26" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_25" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_24" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_23" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_22" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_21" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_20" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_19" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_18" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_17" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_16" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_15" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_14" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_13" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_12" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_11" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_10" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_9" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_8" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_7" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_6" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_5" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_4" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_3" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_2" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_1" BEL
+        "per_bin2bcd/bin2bcduut/finaldd_0" BEL "per_bin2bcd/bin2bcduut/tmp_3"
+        BEL "per_bin2bcd/bin2bcduut/tmp_2" BEL "per_bin2bcd/bin2bcduut/tmp_1"
+        BEL "per_bin2bcd/bin2bcduut/tmp_0" BEL "per_division32/divisor_31" BEL
+        "per_division32/divisor_30" BEL "per_division32/divisor_29" BEL
+        "per_division32/divisor_28" BEL "per_division32/divisor_27" BEL
+        "per_division32/divisor_26" BEL "per_division32/divisor_25" BEL
+        "per_division32/divisor_24" BEL "per_division32/divisor_23" BEL
+        "per_division32/divisor_22" BEL "per_division32/divisor_21" BEL
+        "per_division32/divisor_20" BEL "per_division32/divisor_19" BEL
+        "per_division32/divisor_18" BEL "per_division32/divisor_17" BEL
+        "per_division32/divisor_16" BEL "per_division32/divisor_15" BEL
+        "per_division32/divisor_14" BEL "per_division32/divisor_13" BEL
+        "per_division32/divisor_12" BEL "per_division32/divisor_11" BEL
+        "per_division32/divisor_10" BEL "per_division32/divisor_9" BEL
+        "per_division32/divisor_8" BEL "per_division32/divisor_7" BEL
+        "per_division32/divisor_6" BEL "per_division32/divisor_5" BEL
+        "per_division32/divisor_4" BEL "per_division32/divisor_3" BEL
+        "per_division32/divisor_2" BEL "per_division32/divisor_1" BEL
+        "per_division32/divisor_0" BEL "per_division32/dividend_31" BEL
+        "per_division32/dividend_30" BEL "per_division32/dividend_29" BEL
+        "per_division32/dividend_28" BEL "per_division32/dividend_27" BEL
+        "per_division32/dividend_26" BEL "per_division32/dividend_25" BEL
+        "per_division32/dividend_24" BEL "per_division32/dividend_23" BEL
+        "per_division32/dividend_22" BEL "per_division32/dividend_21" BEL
+        "per_division32/dividend_20" BEL "per_division32/dividend_19" BEL
+        "per_division32/dividend_18" BEL "per_division32/dividend_17" BEL
+        "per_division32/dividend_16" BEL "per_division32/dividend_15" BEL
+        "per_division32/dividend_14" BEL "per_division32/dividend_13" BEL
+        "per_division32/dividend_12" BEL "per_division32/dividend_11" BEL
+        "per_division32/dividend_10" BEL "per_division32/dividend_9" BEL
+        "per_division32/dividend_8" BEL "per_division32/dividend_7" BEL
+        "per_division32/dividend_6" BEL "per_division32/dividend_5" BEL
+        "per_division32/dividend_4" BEL "per_division32/dividend_3" BEL
+        "per_division32/dividend_2" BEL "per_division32/dividend_1" BEL
+        "per_division32/dividend_0" BEL "per_division32/d_out_15" BEL
+        "per_division32/d_out_14" BEL "per_division32/d_out_13" BEL
+        "per_division32/d_out_12" BEL "per_division32/d_out_11" BEL
+        "per_division32/d_out_10" BEL "per_division32/d_out_9" BEL
+        "per_division32/d_out_8" BEL "per_division32/d_out_7" BEL
+        "per_division32/d_out_6" BEL "per_division32/d_out_5" BEL
+        "per_division32/d_out_4" BEL "per_division32/d_out_3" BEL
+        "per_division32/d_out_2" BEL "per_division32/d_out_1" BEL
+        "per_division32/d_out_0" BEL "per_division32/division32uut/r_62" BEL
+        "per_division32/division32uut/r_61" BEL
+        "per_division32/division32uut/r_60" BEL
+        "per_division32/division32uut/r_59" BEL
+        "per_division32/division32uut/r_58" BEL
+        "per_division32/division32uut/r_57" BEL
+        "per_division32/division32uut/r_56" BEL
+        "per_division32/division32uut/r_55" BEL
+        "per_division32/division32uut/r_54" BEL
+        "per_division32/division32uut/r_53" BEL
+        "per_division32/division32uut/r_52" BEL
+        "per_division32/division32uut/r_51" BEL
+        "per_division32/division32uut/r_50" BEL
+        "per_division32/division32uut/r_49" BEL
+        "per_division32/division32uut/r_48" BEL
+        "per_division32/division32uut/r_47" BEL
+        "per_division32/division32uut/r_46" BEL
+        "per_division32/division32uut/r_45" BEL
+        "per_division32/division32uut/r_44" BEL
+        "per_division32/division32uut/r_43" BEL
+        "per_division32/division32uut/r_42" BEL
+        "per_division32/division32uut/r_41" BEL
+        "per_division32/division32uut/r_40" BEL
+        "per_division32/division32uut/r_39" BEL
+        "per_division32/division32uut/r_38" BEL
+        "per_division32/division32uut/r_37" BEL
+        "per_division32/division32uut/r_36" BEL
+        "per_division32/division32uut/r_35" BEL
+        "per_division32/division32uut/r_34" BEL
+        "per_division32/division32uut/r_33" BEL
+        "per_division32/division32uut/r_32" BEL
+        "per_division32/division32uut/r_31" BEL
+        "per_division32/division32uut/r_30" BEL
+        "per_division32/division32uut/r_29" BEL
+        "per_division32/division32uut/r_28" BEL
+        "per_division32/division32uut/r_27" BEL
+        "per_division32/division32uut/r_26" BEL
+        "per_division32/division32uut/r_25" BEL
+        "per_division32/division32uut/r_24" BEL
+        "per_division32/division32uut/r_23" BEL
+        "per_division32/division32uut/r_22" BEL
+        "per_division32/division32uut/r_21" BEL
+        "per_division32/division32uut/r_20" BEL
+        "per_division32/division32uut/r_19" BEL
+        "per_division32/division32uut/r_18" BEL
+        "per_division32/division32uut/r_17" BEL
+        "per_division32/division32uut/r_16" BEL
+        "per_division32/division32uut/r_15" BEL
+        "per_division32/division32uut/r_14" BEL
+        "per_division32/division32uut/r_13" BEL
+        "per_division32/division32uut/r_12" BEL
+        "per_division32/division32uut/r_11" BEL
+        "per_division32/division32uut/r_10" BEL
+        "per_division32/division32uut/r_9" BEL
+        "per_division32/division32uut/r_8" BEL
+        "per_division32/division32uut/r_7" BEL
+        "per_division32/division32uut/r_6" BEL
+        "per_division32/division32uut/r_5" BEL
+        "per_division32/division32uut/r_4" BEL
+        "per_division32/division32uut/r_3" BEL
+        "per_division32/division32uut/r_2" BEL
+        "per_division32/division32uut/r_1" BEL
+        "per_division32/division32uut/r_0" BEL
+        "per_division32/division32uut/q_31" BEL
+        "per_division32/division32uut/q_30" BEL
+        "per_division32/division32uut/q_29" BEL
+        "per_division32/division32uut/q_28" BEL
+        "per_division32/division32uut/q_27" BEL
+        "per_division32/division32uut/q_26" BEL
+        "per_division32/division32uut/q_25" BEL
+        "per_division32/division32uut/q_24" BEL
+        "per_division32/division32uut/q_23" BEL
+        "per_division32/division32uut/q_22" BEL
+        "per_division32/division32uut/q_21" BEL
+        "per_division32/division32uut/q_20" BEL
+        "per_division32/division32uut/q_19" BEL
+        "per_division32/division32uut/q_18" BEL
+        "per_division32/division32uut/q_17" BEL
+        "per_division32/division32uut/q_16" BEL
+        "per_division32/division32uut/q_15" BEL
+        "per_division32/division32uut/q_14" BEL
+        "per_division32/division32uut/q_13" BEL
+        "per_division32/division32uut/q_12" BEL
+        "per_division32/division32uut/q_11" BEL
+        "per_division32/division32uut/q_10" BEL
+        "per_division32/division32uut/q_9" BEL
+        "per_division32/division32uut/q_8" BEL
+        "per_division32/division32uut/q_7" BEL
+        "per_division32/division32uut/q_6" BEL
+        "per_division32/division32uut/q_5" BEL
+        "per_division32/division32uut/q_4" BEL
+        "per_division32/division32uut/q_3" BEL
+        "per_division32/division32uut/q_2" BEL
+        "per_division32/division32uut/q_1" BEL
+        "per_division32/division32uut/q_0" BEL
+        "per_division32/division32uut/quotient_31" BEL
+        "per_division32/division32uut/quotient_30" BEL
+        "per_division32/division32uut/quotient_29" BEL
+        "per_division32/division32uut/quotient_28" BEL
+        "per_division32/division32uut/quotient_27" BEL
+        "per_division32/division32uut/quotient_26" BEL
+        "per_division32/division32uut/quotient_25" BEL
+        "per_division32/division32uut/quotient_24" BEL
+        "per_division32/division32uut/quotient_23" BEL
+        "per_division32/division32uut/quotient_22" BEL
+        "per_division32/division32uut/quotient_21" BEL
+        "per_division32/division32uut/quotient_20" BEL
+        "per_division32/division32uut/quotient_19" BEL
+        "per_division32/division32uut/quotient_18" BEL
+        "per_division32/division32uut/quotient_17" BEL
+        "per_division32/division32uut/quotient_16" BEL
+        "per_division32/division32uut/quotient_15" BEL
+        "per_division32/division32uut/quotient_14" BEL
+        "per_division32/division32uut/quotient_13" BEL
+        "per_division32/division32uut/quotient_12" BEL
+        "per_division32/division32uut/quotient_11" BEL
+        "per_division32/division32uut/quotient_10" BEL
+        "per_division32/division32uut/quotient_9" BEL
+        "per_division32/division32uut/quotient_8" BEL
+        "per_division32/division32uut/quotient_7" BEL
+        "per_division32/division32uut/quotient_6" BEL
+        "per_division32/division32uut/quotient_5" BEL
+        "per_division32/division32uut/quotient_4" BEL
+        "per_division32/division32uut/quotient_3" BEL
+        "per_division32/division32uut/quotient_2" BEL
+        "per_division32/division32uut/quotient_1" BEL
+        "per_division32/division32uut/quotient_0" BEL
+        "per_division32/division32uut/t_31" BEL
+        "per_division32/division32uut/t_30" BEL
+        "per_division32/division32uut/t_29" BEL
+        "per_division32/division32uut/t_28" BEL
+        "per_division32/division32uut/t_27" BEL
+        "per_division32/division32uut/t_26" BEL
+        "per_division32/division32uut/t_25" BEL
+        "per_division32/division32uut/t_24" BEL
+        "per_division32/division32uut/t_23" BEL
+        "per_division32/division32uut/t_22" BEL
+        "per_division32/division32uut/t_21" BEL
+        "per_division32/division32uut/t_20" BEL
+        "per_division32/division32uut/t_19" BEL
+        "per_division32/division32uut/t_18" BEL
+        "per_division32/division32uut/t_17" BEL
+        "per_division32/division32uut/t_16" BEL
+        "per_division32/division32uut/t_15" BEL
+        "per_division32/division32uut/t_14" BEL
+        "per_division32/division32uut/t_13" BEL
+        "per_division32/division32uut/t_12" BEL
+        "per_division32/division32uut/t_11" BEL
+        "per_division32/division32uut/t_10" BEL
+        "per_division32/division32uut/t_9" BEL
+        "per_division32/division32uut/t_8" BEL
+        "per_division32/division32uut/t_7" BEL
+        "per_division32/division32uut/t_6" BEL
+        "per_division32/division32uut/t_5" BEL
+        "per_division32/division32uut/t_4" BEL
+        "per_division32/division32uut/t_3" BEL
+        "per_division32/division32uut/t_2" BEL
+        "per_division32/division32uut/t_1" BEL
+        "per_division32/division32uut/t_0" BEL
+        "per_division32/division32uut/p_62" BEL
+        "per_division32/division32uut/p_61" BEL
+        "per_division32/division32uut/p_60" BEL
+        "per_division32/division32uut/p_59" BEL
+        "per_division32/division32uut/p_58" BEL
+        "per_division32/division32uut/p_57" BEL
+        "per_division32/division32uut/p_56" BEL
+        "per_division32/division32uut/p_55" BEL
+        "per_division32/division32uut/p_54" BEL
+        "per_division32/division32uut/p_53" BEL
+        "per_division32/division32uut/p_52" BEL
+        "per_division32/division32uut/p_51" BEL
+        "per_division32/division32uut/p_50" BEL
+        "per_division32/division32uut/p_49" BEL
+        "per_division32/division32uut/p_48" BEL
+        "per_division32/division32uut/p_47" BEL
+        "per_division32/division32uut/p_46" BEL
+        "per_division32/division32uut/p_45" BEL
+        "per_division32/division32uut/p_44" BEL
+        "per_division32/division32uut/p_43" BEL
+        "per_division32/division32uut/p_42" BEL
+        "per_division32/division32uut/p_41" BEL
+        "per_division32/division32uut/p_40" BEL
+        "per_division32/division32uut/p_39" BEL
+        "per_division32/division32uut/p_38" BEL
+        "per_division32/division32uut/p_37" BEL
+        "per_division32/division32uut/p_36" BEL
+        "per_division32/division32uut/p_35" BEL
+        "per_division32/division32uut/p_34" BEL
+        "per_division32/division32uut/p_33" BEL
+        "per_division32/division32uut/p_32" BEL
+        "per_division32/division32uut/p_31" BEL
+        "per_division32/division32uut/p_30" BEL
+        "per_division32/division32uut/p_29" BEL
+        "per_division32/division32uut/p_28" BEL
+        "per_division32/division32uut/p_27" BEL
+        "per_division32/division32uut/p_26" BEL
+        "per_division32/division32uut/p_25" BEL
+        "per_division32/division32uut/p_24" BEL
+        "per_division32/division32uut/p_23" BEL
+        "per_division32/division32uut/p_22" BEL
+        "per_division32/division32uut/p_21" BEL
+        "per_division32/division32uut/p_20" BEL
+        "per_division32/division32uut/p_19" BEL
+        "per_division32/division32uut/p_18" BEL
+        "per_division32/division32uut/p_17" BEL
+        "per_division32/division32uut/p_16" BEL
+        "per_division32/division32uut/p_15" BEL
+        "per_division32/division32uut/p_14" BEL
+        "per_division32/division32uut/p_13" BEL
+        "per_division32/division32uut/p_12" BEL
+        "per_division32/division32uut/p_11" BEL
+        "per_division32/division32uut/p_10" BEL
+        "per_division32/division32uut/p_9" BEL
+        "per_division32/division32uut/p_8" BEL
+        "per_division32/division32uut/p_7" BEL
+        "per_division32/division32uut/p_6" BEL
+        "per_division32/division32uut/p_5" BEL
+        "per_division32/division32uut/p_4" BEL
+        "per_division32/division32uut/p_3" BEL
+        "per_division32/division32uut/p_2" BEL
+        "per_division32/division32uut/p_1" BEL
+        "per_division32/division32uut/p_0" BEL
+        "per_division32/division32uut/done" BEL
+        "per_division32/division32uut/state" BEL "per_i2c/i2cuut/data_clk" BEL
+        "per_bin2bcd/bin2bcduut/done" BEL "per_i2c/i2cuut/sda_int" BEL
+        "per_i2c/i2cuut/busy" BEL "per_i2c/i2cuut/scl_clk" BEL
+        "per_u/uart/uart_tx" BEL "per_bin2bcd/bin2bcduut/bol" BEL
+        "per_timmer/d_out" BEL "per_timmer/timmeruut/ClkOut" BEL "per_i2c/ena"
+        BEL "per_i2c/rw" BEL "per_i2c/i2cuut/data_clk_prev" BEL
+        "per_d/d_16/ctr_dv/z" BEL "per_u/ledout" BEL "per_bin2bcd/enable" BEL
+        "per_division32/go" BEL "per_bin2bcd/bin2bcduut/init" BEL
+        "sys_clk_i_BUFGP/BUFG" BEL "per_u/uart/uart_tx_1" BEL "per_u/ledout_1"
+        BEL "dpRm/dlptRAM/Mram_ram1/D" BEL "dpRm/dlptRAM/Mram_ram1/C" BEL
+        "dpRm/dlptRAM/Mram_ram1/B" BEL "dpRm/dlptRAM/Mram_ram1/A" BEL
+        "dpRm/dlptRAM/Mram_ram2/D" BEL "dpRm/dlptRAM/Mram_ram2/C" BEL
+        "dpRm/dlptRAM/Mram_ram2/B" BEL "dpRm/dlptRAM/Mram_ram2/A" BEL
+        "dpRm/dlptRAM/Mram_ram3/D" BEL "dpRm/dlptRAM/Mram_ram3/C" BEL
+        "dpRm/dlptRAM/Mram_ram3/B" BEL "dpRm/dlptRAM/Mram_ram3/A" BEL
+        "dpRm/dlptRAM/Mram_ram4/D" BEL "dpRm/dlptRAM/Mram_ram4/C" BEL
+        "dpRm/dlptRAM/Mram_ram4/B" BEL "dpRm/dlptRAM/Mram_ram4/A" BEL
+        "dpRm/dlptRAM/Mram_ram5/D" BEL "dpRm/dlptRAM/Mram_ram5/C" BEL
+        "dpRm/dlptRAM/Mram_ram5/B" BEL "dpRm/dlptRAM/Mram_ram5/A" BEL
+        "dpRm/dlptRAM/Mram_ram6/D" BEL "dpRm/dlptRAM/Mram_ram6/C" BEL
+        "dpRm/dlptRAM/Mram_ram6/B" BEL "dpRm/dlptRAM/Mram_ram6/A" BEL
+        "dpRm/dlptRAM/Mram_ram7/D" BEL "dpRm/dlptRAM/Mram_ram7/C" BEL
+        "dpRm/dlptRAM/Mram_ram7/B" BEL "dpRm/dlptRAM/Mram_ram7/A" BEL
+        "dpRm/dlptRAM/Mram_ram10/D" BEL "dpRm/dlptRAM/Mram_ram10/C" BEL
+        "dpRm/dlptRAM/Mram_ram10/B" BEL "dpRm/dlptRAM/Mram_ram10/A" BEL
+        "dpRm/dlptRAM/Mram_ram8/D" BEL "dpRm/dlptRAM/Mram_ram8/C" BEL
+        "dpRm/dlptRAM/Mram_ram8/B" BEL "dpRm/dlptRAM/Mram_ram8/A" BEL
+        "dpRm/dlptRAM/Mram_ram9/D" BEL "dpRm/dlptRAM/Mram_ram9/C" BEL
+        "dpRm/dlptRAM/Mram_ram9/B" BEL "dpRm/dlptRAM/Mram_ram9/A" BEL
+        "dpRm/dlptRAM/Mram_ram11/D" BEL "dpRm/dlptRAM/Mram_ram11/C" BEL
+        "dpRm/dlptRAM/Mram_ram11/B" BEL "dpRm/dlptRAM/Mram_ram11/A" BEL
+        "dpRm/dlptRAM/Mram_ram12/D" BEL "dpRm/dlptRAM/Mram_ram12/C" BEL
+        "dpRm/dlptRAM/Mram_ram12/B" BEL "dpRm/dlptRAM/Mram_ram12/A" BEL
+        "dpRm/dlptRAM/Mram_ram13/D" BEL "dpRm/dlptRAM/Mram_ram13/C" BEL
+        "dpRm/dlptRAM/Mram_ram13/B" BEL "dpRm/dlptRAM/Mram_ram13/A" BEL
+        "dpRm/dlptRAM/Mram_ram14/D" BEL "dpRm/dlptRAM/Mram_ram14/C" BEL
+        "dpRm/dlptRAM/Mram_ram14/B" BEL "dpRm/dlptRAM/Mram_ram14/A" BEL
+        "dpRm/dlptRAM/Mram_ram15/D" BEL "dpRm/dlptRAM/Mram_ram15/C" BEL
+        "dpRm/dlptRAM/Mram_ram15/B" BEL "dpRm/dlptRAM/Mram_ram15/A" BEL
+        "dpRm/dlptRAM/Mram_ram16/D" BEL "dpRm/dlptRAM/Mram_ram16/C" BEL
+        "dpRm/dlptRAM/Mram_ram16/B" BEL "dpRm/dlptRAM/Mram_ram16/A" PIN
+        "cpu0/Mram_rstack_pins<32>" PIN "cpu0/ram0/Mram_ram1_pins<63>" PIN
+        "cpu0/ram0/Mram_ram1_pins<62>" PIN "cpu0/ram0/Mram_ram1_pins<65>" PIN
+        "cpu0/ram0/Mram_ram1_pins<64>" PIN "cpu0/ram0/Mram_ram2_pins<63>" PIN
+        "cpu0/ram0/Mram_ram2_pins<62>" PIN "cpu0/ram0/Mram_ram2_pins<65>" PIN
+        "cpu0/ram0/Mram_ram2_pins<64>" PIN "cpu0/ram0/Mram_ram3_pins<63>" PIN
+        "cpu0/ram0/Mram_ram3_pins<62>" PIN "cpu0/ram0/Mram_ram3_pins<65>" PIN
+        "cpu0/ram0/Mram_ram3_pins<64>" PIN "cpu0/ram0/Mram_ram4_pins<63>" PIN
+        "cpu0/ram0/Mram_ram4_pins<62>" PIN "cpu0/ram0/Mram_ram4_pins<65>" PIN
+        "cpu0/ram0/Mram_ram4_pins<64>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

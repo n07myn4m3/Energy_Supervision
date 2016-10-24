@@ -1,0 +1,1377 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : xc7a100t-csg324-3
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : j1soc
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 1
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1soc.v" into library work
+Parsing module <j1soc>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" into library work
+Parsing module <j1>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/dpram.v" into library work
+Parsing module <dp_ram>.
+INFO:HDLCompiler:693 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/dpram.v" Line 24. parameter declaration becomes local in dp_ram with formal parameter declaration list
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/dpRAM/core_peripheric.v" into library work
+Parsing module <core_peripheric>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/dpRAM/dualport_RAM.v" into library work
+Parsing module <dualport_RAM>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/dpRAM/dpRAM_interface.v" into library work
+Parsing module <dpRAM_interface>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/uart/uart.v" into library work
+Parsing module <uart>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/uart/peripheral_uart.v" into library work
+Parsing module <peripheral_uart>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/peripheral_mult.v" into library work
+Parsing module <peripheral_mult>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/acc.v" into library work
+Parsing module <acc>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/comp.v" into library work
+Parsing module <comp>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/control_mult.v" into library work
+Parsing module <control_mult>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/lsr.v" into library work
+Parsing module <lsr>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/rsr.v" into library work
+Parsing module <rsr>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/mult_32.v" into library work
+Parsing module <mult_32>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/peripheral_div.v" into library work
+Parsing module <peripheral_div>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/control_div.v" into library work
+Parsing module <control_div>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/counter_div.v" into library work
+Parsing module <counter_div>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/div_16.v" into library work
+Parsing module <div_16>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/final_result.v" into library work
+Parsing module <final_result>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/lsr_div.v" into library work
+Parsing module <lsr_div>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/subtractor.v" into library work
+Parsing module <subtractor>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/gpout/peripheral_gpout.v" into library work
+Parsing module <peripheral_gpout>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/gpin/peripheral_gpin.v" into library work
+Parsing module <peripheral_gpin>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/i2c/peripheral_i2c.v" into library work
+Parsing module <peripheral_i2c>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/i2c/i2c_master/i2c_master.v" into library work
+Parsing module <i2c_master>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/bin2bcd/peripheral_bin2bcd.v" into library work
+Parsing module <peripheral_bin2bcd>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/bin2bcd/bin2bcd/bin2bcd.v" into library work
+Parsing module <bin2bcd>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider_32/peripheral_division32.v" into library work
+Parsing module <peripheral_division32>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider_32/division32/division32.v" into library work
+Parsing module <division32>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/timmer/peripheral_timmer.v" into library work
+Parsing module <peripheral_timmer>.
+Analyzing Verilog file "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/timmer/timmer/timmer.v" into library work
+Parsing module <timmer>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <j1soc>.
+
+Elaborating module <j1(bootram_file="../firmware/Hello_World/j1.mem")>.
+
+Elaborating module <dp_ram(adr_width=13,dat_width=16,mem_file_name="../firmware/Hello_World/j1.mem")>.
+Reading initialization file \"home/nixtropy/Documentos/SMART_BIKE/Design/hdl/../firmware/Hello_World/j1.mem\".
+WARNING:HDLCompiler:189 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 48: Size mismatch in connection of port <en_b>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 57: Assignment to dstack_test_0 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 59: Assignment to dstack_test_1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 61: Assignment to dstack_test_2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 63: Assignment to dstack_test_3 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 65: Assignment to dstack_test_4 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 67: Assignment to dstack_test_5 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 69: Assignment to dstack_test_6 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 71: Assignment to dstack_test_7 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 73: Assignment to dstack_test_8 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 75: Assignment to dstack_test_9 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 77: Assignment to dstack_test_10 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 79: Assignment to dstack_test_11 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 81: Assignment to dstack_test_12 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 83: Assignment to dstack_test_13 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 85: Assignment to dstack_test_14 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 87: Assignment to dstack_test_15 ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 129: Result of 32-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 156: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 168: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 173: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 194: Result of 15-bit expression is truncated to fit in 13-bit target.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v" Line 196: Result of 16-bit expression is truncated to fit in 13-bit target.
+
+Elaborating module <peripheral_mult>.
+
+Elaborating module <mult_32>.
+
+Elaborating module <rsr>.
+
+Elaborating module <lsr>.
+
+Elaborating module <comp>.
+
+Elaborating module <acc>.
+
+Elaborating module <control_mult>.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/control_mult.v" Line 64: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <peripheral_div>.
+
+Elaborating module <div_16>.
+
+Elaborating module <lsr_div>.
+WARNING:HDLCompiler:189 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/div_16.v" Line 21: Size mismatch in connection of port <rst>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <subtractor>.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/subtractor.v" Line 19: Result of 32-bit expression is truncated to fit in 16-bit target.
+
+Elaborating module <counter_div>.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/counter_div.v" Line 18: Result of 32-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/counter_div.v" Line 22: Result of 32-bit expression is truncated to fit in 1-bit target.
+
+Elaborating module <control_div>.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/control_div.v" Line 72: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:91 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/control_div.v" Line 94: Signal <DV0> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+
+Elaborating module <final_result>.
+
+Elaborating module <peripheral_uart(clkFreq=100000000,baudRate=115200)>.
+
+Elaborating module <uart(clkFreq=100000000,baudRate=115200)>.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/uart/uart.v" Line 59: Result of 32-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <dpRAM_interface>.
+
+Elaborating module <dualport_RAM>.
+
+Elaborating module <peripheral_gpout>.
+
+Elaborating module <peripheral_gpin>.
+
+Elaborating module <peripheral_i2c>.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/i2c/peripheral_i2c.v" Line 70: Result of 16-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/i2c/peripheral_i2c.v" Line 71: Result of 16-bit expression is truncated to fit in 8-bit target.
+
+Elaborating module <i2c_master>.
+
+Elaborating module <peripheral_bin2bcd>.
+
+Elaborating module <bin2bcd>.
+
+Elaborating module <peripheral_division32>.
+
+Elaborating module <division32>.
+
+Elaborating module <peripheral_timmer>.
+
+Elaborating module <timmer>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <j1soc>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1soc.v".
+        bootram_file = "../firmware/Hello_World/j1.mem"
+        clkFreq = 100000000
+        baudRateUart = 115200
+    Summary:
+	no macro.
+Unit <j1soc> synthesized.
+
+Synthesizing Unit <j1>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/j1.v".
+        bootram_file = "../firmware/Hello_World/j1.mem"
+    Found 32x16-bit dual-port RAM <Mram_rstack> for signal <rstack>.
+    Found 13-bit register for signal <pc>.
+    Found 5-bit register for signal <dsp>.
+    Found 16-bit register for signal <st0>.
+    Found 5-bit register for signal <rsp>.
+    Found 512-bit register for signal <n0129[511:0]>.
+    Found 14-bit adder for signal <n0213[13:0]> created at line 43.
+    Found 16-bit adder for signal <st0[15]_st1[15]_add_61_OUT> created at line 121.
+    Found 5-bit adder for signal <dsp[4]_GND_2_o_add_83_OUT> created at line 156.
+    Found 5-bit adder for signal <dsp[4]_dd[1]_add_84_OUT> created at line 161.
+    Found 5-bit adder for signal <rsp[4]_rd[1]_add_85_OUT> created at line 162.
+    Found 5-bit adder for signal <rsp[4]_GND_2_o_add_90_OUT> created at line 173.
+    Found 16-bit subtractor for signal <GND_2_o_GND_2_o_sub_70_OUT<15:0>> created at line 129.
+    Found 5-bit subtractor for signal <GND_2_o_GND_2_o_sub_88_OUT<4:0>> created at line 168.
+    Found 16-bit shifter logical right for signal <st1[15]_st0[3]_shift_right_68_OUT> created at line 128
+    Found 16-bit shifter logical left for signal <st1[15]_st0[3]_shift_left_72_OUT> created at line 132
+    Found 16-bit 32-to-1 multiplexer for signal <st1> created at line 98.
+    Found 16-bit 16-to-1 multiplexer for signal <st0sel[3]_st1[15]_wide_mux_74_OUT> created at line 118.
+    Found 5-bit 4-to-1 multiplexer for signal <_n0259> created at line 165.
+    Found 5-bit 3-to-1 multiplexer for signal <_n0261> created at line 165.
+    Found 16-bit 3-to-1 multiplexer for signal <_n0263> created at line 165.
+    Found 16-bit comparator equal for signal <st1[15]_st0[15]_equal_67_o> created at line 126
+    Found 16-bit comparator greater for signal <st0[15]_st1[15]_LessThan_68_o> created at line 127
+    Found 16-bit comparator greater for signal <st1[15]_st0[15]_LessThan_74_o> created at line 134
+    Summary:
+	inferred   1 RAM(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred 551 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred  53 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <j1> synthesized.
+
+Synthesizing Unit <dp_ram>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/dpram.v".
+        adr_width = 13
+        dat_width = 16
+        mem_file_name = "../firmware/Hello_World/j1.mem"
+    Found 8192x16-bit dual-port RAM <Mram_ram> for signal <ram>.
+    Found 16-bit register for signal <dat_a_out>.
+    Found 16-bit register for signal <dat_b>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <dp_ram> synthesized.
+
+Synthesizing Unit <peripheral_mult>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/peripheral_mult.v".
+    Found 16-bit register for signal <B>.
+    Found 1-bit register for signal <init>.
+    Found 1-bit register for signal <d_out<15>>.
+    Found 1-bit register for signal <d_out<14>>.
+    Found 1-bit register for signal <d_out<13>>.
+    Found 1-bit register for signal <d_out<12>>.
+    Found 1-bit register for signal <d_out<11>>.
+    Found 1-bit register for signal <d_out<10>>.
+    Found 1-bit register for signal <d_out<9>>.
+    Found 1-bit register for signal <d_out<8>>.
+    Found 1-bit register for signal <d_out<7>>.
+    Found 1-bit register for signal <d_out<6>>.
+    Found 1-bit register for signal <d_out<5>>.
+    Found 1-bit register for signal <d_out<4>>.
+    Found 1-bit register for signal <d_out<3>>.
+    Found 1-bit register for signal <d_out<2>>.
+    Found 1-bit register for signal <d_out<1>>.
+    Found 1-bit register for signal <d_out<0>>.
+    Found 16-bit register for signal <A>.
+    Found 6-bit 7-to-1 multiplexer for signal <_n0084> created at line 14.
+    Summary:
+	inferred  49 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <peripheral_mult> synthesized.
+
+Synthesizing Unit <mult_32>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/mult_32.v".
+    Summary:
+	no macro.
+Unit <mult_32> synthesized.
+
+Synthesizing Unit <rsr>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/rsr.v".
+    Found 16-bit register for signal <s_B>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <rsr> synthesized.
+
+Synthesizing Unit <lsr>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/lsr.v".
+    Found 32-bit register for signal <s_A>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <lsr> synthesized.
+
+Synthesizing Unit <comp>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/comp.v".
+    Summary:
+	no macro.
+Unit <comp> synthesized.
+
+Synthesizing Unit <acc>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/acc.v".
+    Found 32-bit register for signal <pp>.
+    Found 32-bit adder for signal <pp[31]_A[31]_add_1_OUT> created at line 15.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+Unit <acc> synthesized.
+
+Synthesizing Unit <control_mult>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/multiplier/mult_32/control_mult.v".
+        START = 3'b000
+        CHECK = 3'b001
+        SHIFT = 3'b010
+        ADD = 3'b011
+        END = 3'b100
+    Found 4-bit register for signal <count>.
+    Found 3-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <count[3]_GND_10_o_add_4_OUT> created at line 64.
+    Found 4-bit comparator greater for signal <PWR_13_o_count[3]_LessThan_6_o> created at line 65
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <control_mult> synthesized.
+
+Synthesizing Unit <peripheral_div>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/peripheral_div.v".
+    Found 16-bit register for signal <B>.
+    Found 1-bit register for signal <init>.
+    Found 1-bit register for signal <d_out<15>>.
+    Found 1-bit register for signal <d_out<14>>.
+    Found 1-bit register for signal <d_out<13>>.
+    Found 1-bit register for signal <d_out<12>>.
+    Found 1-bit register for signal <d_out<11>>.
+    Found 1-bit register for signal <d_out<10>>.
+    Found 1-bit register for signal <d_out<9>>.
+    Found 1-bit register for signal <d_out<8>>.
+    Found 1-bit register for signal <d_out<7>>.
+    Found 1-bit register for signal <d_out<6>>.
+    Found 1-bit register for signal <d_out<5>>.
+    Found 1-bit register for signal <d_out<4>>.
+    Found 1-bit register for signal <d_out<3>>.
+    Found 1-bit register for signal <d_out<2>>.
+    Found 1-bit register for signal <d_out<1>>.
+    Found 1-bit register for signal <d_out<0>>.
+    Found 16-bit register for signal <A>.
+    Found 6-bit 7-to-1 multiplexer for signal <_n0077> created at line 14.
+    Summary:
+	inferred  49 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <peripheral_div> synthesized.
+
+Synthesizing Unit <div_16>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/div_16.v".
+    Summary:
+	no macro.
+Unit <div_16> synthesized.
+
+Synthesizing Unit <lsr_div>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/lsr_div.v".
+    Found 16-bit register for signal <DV>.
+    Found 16-bit register for signal <A>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <lsr_div> synthesized.
+
+Synthesizing Unit <subtractor>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/subtractor.v".
+    Found 16-bit register for signal <Result>.
+    Found 32-bit adder for signal <n0023> created at line 19.
+    Found 32-bit adder for signal <n0014> created at line 19.
+    Found 16-bit comparator greater for signal <MSB> created at line 26
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <subtractor> synthesized.
+
+Synthesizing Unit <counter_div>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/counter_div.v".
+    Found 1-bit register for signal <z>.
+    Found 5-bit register for signal <cont>.
+    Found 5-bit subtractor for signal <GND_15_o_GND_15_o_sub_2_OUT<4:0>> created at line 18.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   6 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <counter_div> synthesized.
+
+Synthesizing Unit <control_div>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/control_div.v".
+        START = 3'b000
+        SHIFT_DEC = 3'b001
+        CHECK = 3'b010
+        ADD = 3'b011
+        LOAD = 3'b101
+        END1 = 3'b100
+    Found 4-bit register for signal <count>.
+    Found 3-bit register for signal <state>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit adder for signal <count[3]_GND_16_o_add_6_OUT> created at line 72.
+WARNING:Xst:737 - Found 1-bit latch for signal <DV0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 4-bit comparator greater for signal <PWR_19_o_count[3]_LessThan_8_o> created at line 73
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Latch(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <control_div> synthesized.
+
+Synthesizing Unit <final_result>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider/div_16/final_result.v".
+    Found 16-bit register for signal <Result>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <final_result> synthesized.
+
+Synthesizing Unit <peripheral_uart>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/uart/peripheral_uart.v".
+        clkFreq = 100000000
+        baudRate = 115200
+WARNING:Xst:647 - Input <d_in<15:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <ledout>.
+    Found 1-bit register for signal <d_out<15>>.
+    Found 1-bit register for signal <d_out<14>>.
+    Found 1-bit register for signal <d_out<13>>.
+    Found 1-bit register for signal <d_out<12>>.
+    Found 1-bit register for signal <d_out<11>>.
+    Found 1-bit register for signal <d_out<10>>.
+    Found 1-bit register for signal <d_out<9>>.
+    Found 1-bit register for signal <d_out<8>>.
+    Found 1-bit register for signal <d_out<7>>.
+    Found 1-bit register for signal <d_out<6>>.
+    Found 1-bit register for signal <d_out<5>>.
+    Found 1-bit register for signal <d_out<4>>.
+    Found 1-bit register for signal <d_out<3>>.
+    Found 1-bit register for signal <d_out<2>>.
+    Found 1-bit register for signal <d_out<1>>.
+    Found 1-bit register for signal <d_out<0>>.
+    Found 8-bit register for signal <d_in_uart>.
+    Found 3-bit 4-to-1 multiplexer for signal <_n0093> created at line 20.
+    Summary:
+	inferred  25 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <peripheral_uart> synthesized.
+
+Synthesizing Unit <uart>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/uart/uart.v".
+        clkFreq = 100000000
+        baudRate = 115200
+    Found 1-bit register for signal <uart_tx>.
+    Found 4-bit register for signal <bitcount>.
+    Found 9-bit register for signal <shifter>.
+    Found 29-bit register for signal <d>.
+    Found 29-bit adder for signal <dNxt> created at line 35.
+    Found 4-bit subtractor for signal <GND_20_o_GND_20_o_sub_11_OUT<3:0>> created at line 59.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  43 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <uart> synthesized.
+
+Synthesizing Unit <dpRAM_interface>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/dpRAM/dpRAM_interface.v".
+    Summary:
+	no macro.
+Unit <dpRAM_interface> synthesized.
+
+Synthesizing Unit <dualport_RAM>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/dpRAM/dualport_RAM.v".
+    Found 256x16-bit single-port RAM <Mram_ram> for signal <ram>.
+    Found 16-bit register for signal <d_out>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <dualport_RAM> synthesized.
+
+Synthesizing Unit <peripheral_gpout>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/gpout/peripheral_gpout.v".
+    Found 16-bit register for signal <gp_out1>.
+    Found 16-bit register for signal <gp_out0>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <peripheral_gpout> synthesized.
+
+Synthesizing Unit <peripheral_gpin>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/gpin/peripheral_gpin.v".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit register for signal <d_out>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <peripheral_gpin> synthesized.
+
+Synthesizing Unit <peripheral_i2c>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/i2c/peripheral_i2c.v".
+    Found 1-bit register for signal <rw>.
+    Found 7-bit register for signal <add_r>.
+    Found 8-bit register for signal <data_wr>.
+    Found 16-bit register for signal <d_out>.
+    Found 1-bit register for signal <ena>.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+Unit <peripheral_i2c> synthesized.
+
+Synthesizing Unit <i2c_master>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/i2c/i2c_master/i2c_master.v".
+        input_clk = 100000000
+        bus_clk = 100000
+        countWidth = 10
+        ready = 4'b0000
+        start = 4'b0001
+        command = 4'b0010
+        slv_ack1 = 4'b0011
+        wr = 4'b0100
+        rd = 4'b0101
+        slv_ack2 = 4'b0110
+        mstr_ack = 4'b0111
+        stop = 4'b1000
+    Found 1-bit register for signal <busy>.
+    Found 4-bit register for signal <state>.
+    Found 32-bit register for signal <bit_cnt>.
+    Found 8-bit register for signal <data_rd>.
+    Found 10-bit register for signal <count>.
+    Found 1-bit register for signal <scl_ena>.
+    Found 1-bit register for signal <sda_int>.
+    Found 1-bit register for signal <ack_error>.
+    Found 1-bit register for signal <data_clk_prev>.
+    Found 1-bit register for signal <scl_clk>.
+    Found 1-bit register for signal <data_clk>.
+    Found 8-bit register for signal <addr_rw>.
+    Found 8-bit register for signal <data_tx>.
+    Found 8-bit register for signal <data_rx>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 36                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 10                                             |
+    | Clock              | clk (falling_edge)                             |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <n0160[31:0]> created at line 171.
+    Found 10-bit adder for signal <count[9]_GND_26_o_add_1_OUT> created at line 81.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_cnt[2]_addr_rw[7]_Mux_13_o> created at line 135.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_cnt[31]_addr_rw[7]_Mux_17_o> created at line 148.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_cnt[2]_data_tx[7]_Mux_20_o> created at line 155.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_cnt[31]_data_tx[7]_Mux_25_o> created at line 171.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_cnt[2]_data_wr[7]_Mux_35_o> created at line 199.
+    Found 1-bit tristate buffer for signal <scl> created at line 275
+    Found 1-bit tristate buffer for signal <sda> created at line 277
+    Found 10-bit comparator greater for signal <count[9]_GND_26_o_LessThan_4_o> created at line 82
+    Found 10-bit comparator greater for signal <count[9]_GND_26_o_LessThan_6_o> created at line 86
+    Found 10-bit comparator greater for signal <count[9]_PWR_30_o_LessThan_8_o> created at line 90
+    Found 8-bit comparator equal for signal <addr_rw[7]_addr[6]_equal_41_o> created at line 214
+    Found 32-bit comparator lessequal for signal <n0074> created at line 245
+    Found 32-bit comparator lessequal for signal <n0076> created at line 245
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  81 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred  32 Multiplexer(s).
+	inferred   2 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <i2c_master> synthesized.
+
+Synthesizing Unit <peripheral_bin2bcd>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/bin2bcd/peripheral_bin2bcd.v".
+WARNING:Xst:647 - Input <d_in<15:14>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 14-bit register for signal <data>.
+    Found 16-bit register for signal <d_out>.
+    Found 1-bit register for signal <enable>.
+    Found 7-bit 8-to-1 multiplexer for signal <_n0081> created at line 14.
+    Summary:
+	inferred  31 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <peripheral_bin2bcd> synthesized.
+
+Synthesizing Unit <bin2bcd>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/bin2bcd/bin2bcd/bin2bcd.v".
+    Found 4-bit register for signal <tmp>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <init>.
+    Found 1-bit register for signal <bol>.
+    Found 30-bit register for signal <finaldd>.
+    Found 4-bit adder for signal <tmp[3]_GND_31_o_add_7_OUT> created at line 69.
+    Found 4-bit adder for signal <finaldd[29]_GND_31_o_add_9_OUT> created at line 74.
+    Found 4-bit adder for signal <finaldd[25]_GND_31_o_add_11_OUT> created at line 77.
+    Found 4-bit adder for signal <finaldd[21]_GND_31_o_add_13_OUT> created at line 80.
+    Found 4-bit adder for signal <finaldd[17]_GND_31_o_add_15_OUT> created at line 83.
+    Found 4-bit comparator greater for signal <n0006> created at line 63
+    Found 4-bit comparator greater for signal <GND_31_o_finaldd[29]_LessThan_9_o> created at line 73
+    Found 4-bit comparator greater for signal <GND_31_o_finaldd[25]_LessThan_11_o> created at line 76
+    Found 4-bit comparator greater for signal <GND_31_o_finaldd[21]_LessThan_13_o> created at line 79
+    Found 4-bit comparator greater for signal <GND_31_o_finaldd[17]_LessThan_15_o> created at line 82
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  37 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+	inferred  26 Multiplexer(s).
+Unit <bin2bcd> synthesized.
+
+Synthesizing Unit <peripheral_division32>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider_32/peripheral_division32.v".
+    Found 32-bit register for signal <dividend>.
+    Found 32-bit register for signal <divisor>.
+    Found 16-bit register for signal <d_out>.
+    Found 1-bit register for signal <go>.
+    Found 8-bit 8-to-1 multiplexer for signal <_n0088> created at line 27.
+    Summary:
+	inferred  81 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <peripheral_division32> synthesized.
+
+Synthesizing Unit <division32>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/divider_32/division32/division32.v".
+        S_LO = 1'b0
+        S_HI = 1'b1
+        S_IDLE = 1'b0
+        S_RUN = 1'b1
+    Found 63-bit register for signal <r>.
+    Found 63-bit register for signal <p>.
+    Found 32-bit register for signal <t>.
+    Found 32-bit register for signal <quotient>.
+    Found 32-bit register for signal <q>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <state>.
+    Found 63-bit subtractor for signal <r[62]_p[62]_sub_8_OUT> created at line 112.
+    Found 32-bit adder for signal <q[31]_t[31]_add_6_OUT> created at line 111.
+    Found 32-bit adder for signal <q[31]_GND_33_o_add_12_OUT> created at line 121.
+    Found 63-bit comparator greater for signal <n0012> created at line 121
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 224 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <division32> synthesized.
+
+Synthesizing Unit <peripheral_timmer>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/timmer/peripheral_timmer.v".
+WARNING:Xst:647 - Input <d_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <wr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit register for signal <d_out>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <peripheral_timmer> synthesized.
+
+Synthesizing Unit <timmer>.
+    Related source file is "/home/nixtropy/Documentos/SMART_BIKE/Design/hdl/timmer/timmer/timmer.v".
+        input_clk = 100000000
+        bus_clk = 1
+        divFactor = 100000000
+        on_counting = 10
+        maxCount = 100000000
+        counterWidth = 27
+    Found 1-bit register for signal <ClkOut>.
+    Found 27-bit register for signal <Q>.
+    Found 27-bit adder for signal <Q[26]_GND_35_o_add_2_OUT> created at line 48.
+    Found 27-bit comparator greater for signal <PWR_39_o_Q[26]_LessThan_6_o> created at line 53
+    Found 27-bit comparator greater for signal <Q[26]_PWR_39_o_LessThan_7_o> created at line 53
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  28 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <timmer> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 256x16-bit single-port RAM                            : 1
+ 32x16-bit dual-port RAM                               : 1
+ 8192x16-bit dual-port RAM                             : 1
+# Adders/Subtractors                                   : 25
+ 10-bit adder                                          : 1
+ 14-bit adder                                          : 1
+ 16-bit adder                                          : 1
+ 16-bit subtractor                                     : 1
+ 27-bit adder                                          : 1
+ 29-bit adder                                          : 1
+ 32-bit adder                                          : 5
+ 32-bit subtractor                                     : 1
+ 4-bit adder                                           : 7
+ 4-bit subtractor                                      : 1
+ 5-bit adder                                           : 2
+ 5-bit addsub                                          : 1
+ 5-bit subtractor                                      : 1
+ 63-bit subtractor                                     : 1
+# Registers                                            : 77
+ 1-bit register                                        : 22
+ 10-bit register                                       : 1
+ 13-bit register                                       : 1
+ 14-bit register                                       : 1
+ 16-bit register                                       : 23
+ 27-bit register                                       : 1
+ 29-bit register                                       : 1
+ 30-bit register                                       : 1
+ 32-bit register                                       : 8
+ 4-bit register                                        : 4
+ 5-bit register                                        : 3
+ 512-bit register                                      : 1
+ 63-bit register                                       : 2
+ 7-bit register                                        : 1
+ 8-bit register                                        : 6
+ 9-bit register                                        : 1
+# Latches                                              : 1
+ 1-bit latch                                           : 1
+# Comparators                                          : 20
+ 10-bit comparator greater                             : 3
+ 16-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 3
+ 27-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 2
+ 4-bit comparator greater                              : 7
+ 63-bit comparator greater                             : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 144
+ 1-bit 2-to-1 multiplexer                              : 48
+ 1-bit 8-to-1 multiplexer                              : 5
+ 10-bit 2-to-1 multiplexer                             : 1
+ 13-bit 2-to-1 multiplexer                             : 3
+ 16-bit 16-to-1 multiplexer                            : 1
+ 16-bit 2-to-1 multiplexer                             : 43
+ 16-bit 3-to-1 multiplexer                             : 1
+ 16-bit 32-to-1 multiplexer                            : 1
+ 27-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 1
+ 3-bit 4-to-1 multiplexer                              : 1
+ 30-bit 2-to-1 multiplexer                             : 6
+ 32-bit 2-to-1 multiplexer                             : 5
+ 4-bit 2-to-1 multiplexer                              : 7
+ 5-bit 2-to-1 multiplexer                              : 9
+ 6-bit 2-to-1 multiplexer                              : 2
+ 6-bit 7-to-1 multiplexer                              : 2
+ 63-bit 2-to-1 multiplexer                             : 2
+ 7-bit 2-to-1 multiplexer                              : 1
+ 7-bit 8-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 1
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# Tristates                                            : 2
+ 1-bit tristate buffer                                 : 2
+# FSMs                                                 : 3
+# Xors                                                 : 1
+ 16-bit xor2                                           : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <d_out_8> in Unit <per_i2c> is equivalent to the following 7 FFs/Latches, which will be removed : <d_out_9> <d_out_10> <d_out_11> <d_out_12> <d_out_13> <d_out_14> <d_out_15> 
+INFO:Xst:2261 - The FF/Latch <d_out_4> in Unit <per_bin2bcd> is equivalent to the following 11 FFs/Latches, which will be removed : <d_out_5> <d_out_6> <d_out_7> <d_out_8> <d_out_9> <d_out_10> <d_out_11> <d_out_12> <d_out_13> <d_out_14> <d_out_15> 
+INFO:Xst:2261 - The FF/Latch <d_out_1> in Unit <per_timmer> is equivalent to the following 14 FFs/Latches, which will be removed : <d_out_2> <d_out_3> <d_out_4> <d_out_5> <d_out_6> <d_out_7> <d_out_8> <d_out_9> <d_out_10> <d_out_11> <d_out_12> <d_out_13> <d_out_14> <d_out_15> 
+WARNING:Xst:1710 - FF/Latch <d_out_8> (without init value) has a constant value of 0 in block <per_i2c>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <d_out_4> (without init value) has a constant value of 0 in block <per_bin2bcd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <d_out_1> (without init value) has a constant value of 0 in block <per_timmer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <d_out<15:8>> (without init value) have a constant value of 0 in block <peripheral_i2c>.
+WARNING:Xst:2404 -  FFs/Latches <d_out<15:4>> (without init value) have a constant value of 0 in block <peripheral_bin2bcd>.
+WARNING:Xst:2404 -  FFs/Latches <d_out<15:1>> (without init value) have a constant value of 0 in block <peripheral_timmer>.
+
+Synthesizing (advanced) Unit <acc>.
+The following registers are absorbed into accumulator <pp>: 1 register on signal <pp>.
+Unit <acc> synthesized (advanced).
+
+Synthesizing (advanced) Unit <division32>.
+The following registers are absorbed into accumulator <r>: 1 register on signal <r>.
+The following registers are absorbed into accumulator <q>: 1 register on signal <q>.
+Unit <division32> synthesized (advanced).
+
+Synthesizing (advanced) Unit <i2c_master>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <i2c_master> synthesized (advanced).
+
+Synthesizing (advanced) Unit <j1>.
+The following registers are absorbed into counter <dsp>: 1 register on signal <dsp>.
+INFO:Xst:3226 - The RAM <Mram_rstack> will be implemented as a BLOCK RAM, absorbing the following register(s): <rsp>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 16-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <sys_clk_i>     | rise     |
+    |     weA            | connected to signal <_rstkW>        | high     |
+    |     addrA          | connected to signal <_rsp>          |          |
+    |     diA            | connected to signal <_rstkD>        |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <j1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <j1soc>.
+INFO:Xst:3226 - The RAM <cpu0/ram0/Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <cpu0/ram0/dat_a_out> <cpu0/ram0/dat_b>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8192-word x 16-bit                  |          |
+    |     mode           | no-change                           |          |
+    |     clkA           | connected to signal <sys_clk_i>     | rise     |
+    |     enA            | connected to internal node          | low      |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <j1_io_addr<15:3>> |          |
+    |     diA            | connected to signal <j1_io_dout>    |          |
+    |     doA            | connected to signal <cpu0/ramrd>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8192-word x 16-bit                  |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <sys_clk_i>     | rise     |
+    |     addrB          | connected to signal <cpu0/_pc>      |          |
+    |     doB            | connected to signal <cpu0/insn>     |          |
+    -----------------------------------------------------------------------
+    | optimization       | area                                |          |
+    -----------------------------------------------------------------------
+Unit <j1soc> synthesized (advanced).
+
+Synthesizing (advanced) Unit <timmer>.
+The following registers are absorbed into counter <Q>: 1 register on signal <Q>.
+Unit <timmer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart>.
+The following registers are absorbed into accumulator <d>: 1 register on signal <d>.
+The following registers are absorbed into counter <bitcount>: 1 register on signal <bitcount>.
+Unit <uart> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 256x16-bit single-port distributed RAM                : 1
+ 32x16-bit single-port block RAM                       : 1
+ 8192x16-bit dual-port block RAM                       : 1
+# Adders/Subtractors                                   : 18
+ 10-bit adder                                          : 1
+ 14-bit adder                                          : 1
+ 16-bit adder                                          : 1
+ 16-bit adder carry in                                 : 1
+ 16-bit subtractor                                     : 1
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
+ 4-bit adder                                           : 7
+ 5-bit adder                                           : 2
+ 5-bit addsub                                          : 1
+ 5-bit subtractor                                      : 1
+# Counters                                             : 4
+ 10-bit up counter                                     : 1
+ 27-bit up counter                                     : 1
+ 4-bit down counter                                    : 1
+ 5-bit up counter                                      : 1
+# Accumulators                                         : 4
+ 29-bit up accumulator                                 : 1
+ 32-bit up accumulator                                 : 1
+ 32-bit up loadable accumulator                        : 1
+ 63-bit down loadable accumulator                      : 1
+# Registers                                            : 1233
+ Flip-Flops                                            : 1233
+# Comparators                                          : 20
+ 10-bit comparator greater                             : 3
+ 16-bit comparator equal                               : 1
+ 16-bit comparator greater                             : 3
+ 27-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 2
+ 4-bit comparator greater                              : 7
+ 63-bit comparator greater                             : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 768
+ 1-bit 2-to-1 multiplexer                              : 702
+ 1-bit 32-to-1 multiplexer                             : 16
+ 1-bit 8-to-1 multiplexer                              : 5
+ 10-bit 2-to-1 multiplexer                             : 1
+ 13-bit 2-to-1 multiplexer                             : 2
+ 16-bit 16-to-1 multiplexer                            : 1
+ 16-bit 2-to-1 multiplexer                             : 5
+ 16-bit 3-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 1
+ 3-bit 4-to-1 multiplexer                              : 1
+ 30-bit 2-to-1 multiplexer                             : 5
+ 32-bit 2-to-1 multiplexer                             : 4
+ 4-bit 2-to-1 multiplexer                              : 6
+ 5-bit 2-to-1 multiplexer                              : 8
+ 6-bit 2-to-1 multiplexer                              : 2
+ 6-bit 7-to-1 multiplexer                              : 2
+ 63-bit 2-to-1 multiplexer                             : 1
+ 7-bit 2-to-1 multiplexer                              : 1
+ 7-bit 8-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 1
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# FSMs                                                 : 3
+# Xors                                                 : 1
+ 16-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <per_m/mt_32/control0/FSM_0> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <per_d/d_16/ctl_dv/FSM_1> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <per_i2c/i2cuut/FSM_2> on signal <state[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0101  | 0101
+ 0100  | 0100
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
+-------------------
+WARNING:Xst:1710 - FF/Latch <d_out_1> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_2> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_3> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_4> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_5> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_6> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_7> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_8> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_9> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_10> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_11> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_12> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_13> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_14> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <d_out_15> (without init value) has a constant value of 0 in block <peripheral_uart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <d_0> of sequential type is unconnected in block <uart>.
+WARNING:Xst:2677 - Node <d_1> of sequential type is unconnected in block <uart>.
+WARNING:Xst:2677 - Node <d_2> of sequential type is unconnected in block <uart>.
+WARNING:Xst:2677 - Node <d_3> of sequential type is unconnected in block <uart>.
+WARNING:Xst:2677 - Node <d_4> of sequential type is unconnected in block <uart>.
+WARNING:Xst:2677 - Node <d_5> of sequential type is unconnected in block <uart>.
+WARNING:Xst:2677 - Node <d_6> of sequential type is unconnected in block <uart>.
+WARNING:Xst:2677 - Node <d_7> of sequential type is unconnected in block <uart>.
+
+Optimizing unit <j1soc> ...
+
+Optimizing unit <peripheral_gpin> ...
+
+Optimizing unit <peripheral_mult> ...
+
+Optimizing unit <lsr> ...
+
+Optimizing unit <rsr> ...
+
+Optimizing unit <control_mult> ...
+
+Optimizing unit <peripheral_div> ...
+
+Optimizing unit <lsr_div> ...
+
+Optimizing unit <subtractor> ...
+
+Optimizing unit <counter_div> ...
+
+Optimizing unit <control_div> ...
+
+Optimizing unit <final_result> ...
+
+Optimizing unit <peripheral_uart> ...
+
+Optimizing unit <uart> ...
+
+Optimizing unit <peripheral_gpout> ...
+
+Optimizing unit <peripheral_bin2bcd> ...
+
+Optimizing unit <bin2bcd> ...
+
+Optimizing unit <peripheral_division32> ...
+
+Optimizing unit <division32> ...
+WARNING:Xst:1710 - FF/Latch <per_i2c/i2cuut/bit_cnt_3> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_4> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_5> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_6> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_7> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_8> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_9> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_10> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_11> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_12> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_13> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_14> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_15> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_16> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_17> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_18> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_19> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_20> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_21> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_22> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_23> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_24> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_25> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_26> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_27> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_28> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_29> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_30> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <per_i2c/i2cuut/bit_cnt_31> (without init value) has a constant value of 0 in block <j1soc>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <per_u/uart/d_28> in Unit <j1soc> is equivalent to the following FF/Latch, which will be removed : <per_u/uart/d_27> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block j1soc, actual ratio is 4.
+FlipFlop per_u/uart/uart_tx has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop per_u/ledout has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1394
+ Flip-Flops                                            : 1394
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : project.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2823
+#      GND                         : 1
+#      INV                         : 26
+#      LUT1                        : 59
+#      LUT2                        : 258
+#      LUT3                        : 752
+#      LUT4                        : 296
+#      LUT5                        : 255
+#      LUT6                        : 454
+#      MUXCY                       : 355
+#      MUXF7                       : 55
+#      MUXF8                       : 12
+#      VCC                         : 1
+#      XORCY                       : 299
+# FlipFlops/Latches                : 1395
+#      FD                          : 33
+#      FD_1                        : 156
+#      FDC                         : 105
+#      FDC_1                       : 5
+#      FDCE                        : 129
+#      FDCE_1                      : 42
+#      FDE                         : 520
+#      FDE_1                       : 205
+#      FDP_1                       : 1
+#      FDPE_1                      : 3
+#      FDR                         : 95
+#      FDRE                        : 65
+#      FDRE_1                      : 32
+#      FDS                         : 3
+#      LD                          : 1
+# RAMS                             : 21
+#      RAM256X1S                   : 16
+#      RAMB18E1                    : 1
+#      RAMB36E1                    : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 69
+#      IBUF                        : 33
+#      IOBUF                       : 1
+#      OBUF                        : 34
+#      OBUFT                       : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1361  out of  126800     1%  
+ Number of Slice LUTs:                 2164  out of  63400     3%  
+    Number used as Logic:              2100  out of  63400     3%  
+    Number used as Memory:               64  out of  19000     0%  
+       Number used as RAM:               64
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2229
+   Number with an unused Flip Flop:     868  out of   2229    38%  
+   Number with an unused LUT:            65  out of   2229     2%  
+   Number of fully used LUT-FF pairs:  1296  out of   2229    58%  
+   Number of unique control sets:        36
+
+IO Utilization: 
+ Number of IOs:                          70
+ Number of bonded IOBs:                  70  out of    210    33%  
+    IOB Flip Flops/Latches:              34
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                5  out of    135     3%  
+    Number using Block RAM only:          5
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------------------------------------+-------------------------------+-------+
+Clock Signal                                                                      | Clock buffer(FF name)         | Load  |
+----------------------------------------------------------------------------------+-------------------------------+-------+
+sys_clk_i                                                                         | BUFGP                         | 1415  |
+per_d/d_16/ctl_dv/state[2]_PWR_20_o_Mux_22_o(per_d/d_16/ctl_dv/state__n0067<5>1:O)| NONE(*)(per_d/d_16/ctl_dv/DV0)| 1     |
+----------------------------------------------------------------------------------+-------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+cpu0/_rstkW(cpu0/Mmux__rstkW11:O)  | NONE(cpu0/Mram_rstack) | 2     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 6.072ns (Maximum Frequency: 164.690MHz)
+   Minimum input arrival time before clock: 3.194ns
+   Maximum output required time after clock: 1.860ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sys_clk_i'
+  Clock period: 6.072ns (frequency: 164.690MHz)
+  Total number of paths / destination ports: 309782 / 2158
+-------------------------------------------------------------------------
+Delay:               3.036ns (Levels of Logic = 3)
+  Source:            cpu0/dsp_1 (FF)
+  Destination:       dpRm/dlptRAM/Mram_ram1 (RAM)
+  Source Clock:      sys_clk_i rising
+  Destination Clock: sys_clk_i falling
+
+  Data Path: cpu0/dsp_1 to dpRm/dlptRAM/Mram_ram1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q            134   0.361   0.816  cpu0/dsp_1 (cpu0/dsp_1)
+     LUT6:I0->O            1   0.097   0.556  mux_7 (mux_7)
+     LUT6:I2->O            1   0.097   0.000  mux_3 (mux_3)
+     MUXF7:I1->O          37   0.279   0.000  mux_2_f7 (j1_io_dout<0>)
+     RAM256X1S:D               0.830          dpRm/dlptRAM/Mram_ram1
+    ----------------------------------------
+    Total                      3.036ns (1.664ns logic, 1.372ns route)
+                                       (54.8% logic, 45.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sys_clk_i'
+  Total number of paths / destination ports: 630 / 543
+-------------------------------------------------------------------------
+Offset:              3.194ns (Levels of Logic = 4)
+  Source:            sys_rst_i (PAD)
+  Destination:       cpu0/Mram_rstack (RAM)
+  Destination Clock: sys_clk_i rising
+
+  Data Path: sys_rst_i to cpu0/Mram_rstack
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           446   0.001   0.727  sys_rst_i_IBUF (sys_rst_i_IBUF)
+     LUT6:I2->O           13   0.097   0.612  mux5281131 (mux528113)
+     LUT5:I1->O            6   0.097   0.706  mux5281 (cpu0/_pc<0>)
+     LUT5:I0->O            1   0.097   0.279  cpu0/Mmux__rstkD11 (cpu0/_rstkD<0>)
+     RAMB18E1:DIADI0           0.577          cpu0/Mram_rstack
+    ----------------------------------------
+    Total                      3.194ns (0.869ns logic, 2.325ns route)
+                                       (27.2% logic, 72.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sys_clk_i'
+  Total number of paths / destination ports: 43 / 36
+-------------------------------------------------------------------------
+Offset:              1.860ns (Levels of Logic = 3)
+  Source:            per_i2c/i2cuut/state_FSM_FFd3 (FF)
+  Destination:       sda (PAD)
+  Source Clock:      sys_clk_i falling
+
+  Data Path: per_i2c/i2cuut/state_FSM_FFd3 to sda
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q           20   0.364   0.467  per_i2c/i2cuut/state_FSM_FFd3 (per_i2c/i2cuut/state_FSM_FFd3)
+     LUT2:I0->O            1   0.097   0.556  per_i2c/i2cuut/sda_ena_n_SW0 (N53)
+     LUT6:I2->O            1   0.097   0.279  per_i2c/i2cuut/sda_ena_n (per_i2c/i2cuut/sda_ena_n)
+     IOBUF:T->IO               0.000          sda_IOBUF (sda)
+    ----------------------------------------
+    Total                      1.860ns (0.558ns logic, 1.302ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock per_d/d_16/ctl_dv/state[2]_PWR_20_o_Mux_22_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sys_clk_i      |         |         |    0.946|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sys_clk_i
+--------------------------------------------+---------+---------+---------+---------+
+                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------+---------+---------+---------+---------+
+per_d/d_16/ctl_dv/state[2]_PWR_20_o_Mux_22_o|         |         |    0.915|         |
+sys_clk_i                                   |    5.762|    2.990|    4.470|         |
+--------------------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 16.21 secs
+ 
+--> 
+
+
+Total memory usage is 509956 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   97 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
+
